@@ -1,0 +1,50 @@
+{
+  "trade_date": "2026-05-04",
+  "etf_code": "00919",
+  "etf_name": "群益台灣精選高息",
+  "issuer": "群益投信",
+  "market": "TWSE",
+  "source": "sample_holdings_snapshot",
+  "holdings": [
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
+      "shares": 1050000,
+      "weight_pct": 2.409,
+      "close": 170,
+      "market_value": 178500000
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "台積電",
+      "shares": 2300000,
+      "weight_pct": 7.221,
+      "close": 950,
+      "market_value": 2185000000
+    },
+    {
+      "stock_code": "2603",
+      "stock_name": "長榮",
+      "shares": 0,
+      "weight_pct": 5.158,
+      "close": 170,
+      "market_value": 0
+    },
+    {
+      "stock_code": "2881",
+      "stock_name": "富邦金",
+      "shares": 2830000,
+      "weight_pct": 5.024,
+      "close": 78,
+      "market_value": 220740000
+    },
+    {
+      "stock_code": "2891",
+      "stock_name": "中信金",
+      "shares": 4820000,
+      "weight_pct": 4.043,
+      "close": 38,
+      "market_value": 183160000
+    }
+  ]
+}

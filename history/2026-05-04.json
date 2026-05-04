@@ -1,179 +1,454 @@
 {
   "meta": {
     "report_date": "2026-05-04",
-    "updated_at": "2026-05-04 22:29:49",
-    "tracked_etfs": 3,
-    "universe": "Taiwan ETF",
-    "market_bias": "偏多"
+    "updated_at": "2026-05-04 23:14:42",
+    "timezone": "Asia/Taipei",
+    "tracked_etfs": 5,
+    "covered_etfs": 5,
+    "coverage_ratio": 1.0,
+    "universe": "TWSE + TPEx 全部 ETF",
+    "market_bias": "偏多",
+    "snapshot_mode": "sample",
+    "previous_snapshot_date": "2026-05-01"
+  },
+  "data_quality": {
+    "tracked_etfs": 5,
+    "covered_etfs": 5,
+    "coverage_ratio": 1.0,
+    "min_required_coverage_ratio": 0.85,
+    "is_ready": true,
+    "allow_partial_report": true
   },
   "kpis": {
-    "net_change_value_yi": 37.3,
-    "consensus_buy_count": 7,
-    "consensus_sell_count": 3,
-    "concentration_score": 50
+    "net_change_value_yi": 199.1,
+    "consensus_buy_count": 6,
+    "consensus_sell_count": 2,
+    "concentration_score": 90
   },
   "top_stock_changes": [
     {
       "stock_code": "2330",
       "stock_name": "台積電",
       "direction": "buy",
-      "delta_lot": 18250,
-      "delta_value_yi": 18.7,
-      "etf_count": 9,
-      "weight_delta_pct": 0.84,
-      "signal": "台積電 被 9 檔 ETF 同步加碼，屬於共識買盤。"
-    },
-    {
-      "stock_code": "2317",
-      "stock_name": "鴻海",
-      "direction": "buy",
-      "delta_lot": 15210,
-      "delta_value_yi": 10.3,
-      "etf_count": 7,
-      "weight_delta_pct": 0.51,
-      "signal": "鴻海 被 7 檔 ETF 同步加碼，屬於共識買盤。"
+      "delta_lot": 14100.0,
+      "delta_value_yi": 133.95,
+      "etf_count": 5,
+      "weight_delta_pct": 0.141,
+      "signal": "台積電 被 5 檔 ETF 同步加碼，估算買盤 133.95 億元，屬於高共識買盤。",
+      "participating_etfs": [
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "buy",
+          "delta_lot": 6200.0,
+          "delta_value_yi": 58.9,
+          "weight_delta_pct": 0.062
+        },
+        {
+          "etf_code": "00878",
+          "etf_name": "國泰永續高股息",
+          "direction": "buy",
+          "delta_lot": 2600.0,
+          "delta_value_yi": 24.7,
+          "weight_delta_pct": 0.026
+        },
+        {
+          "etf_code": "00919",
+          "etf_name": "群益台灣精選高息",
+          "direction": "buy",
+          "delta_lot": 2100.0,
+          "delta_value_yi": 19.95,
+          "weight_delta_pct": 0.021
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "buy",
+          "delta_lot": 1900.0,
+          "delta_value_yi": 18.05,
+          "weight_delta_pct": 0.019
+        },
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "buy",
+          "delta_lot": 1300.0,
+          "delta_value_yi": 12.35,
+          "weight_delta_pct": 0.013
+        }
+      ]
     },
     {
       "stock_code": "2454",
       "stock_name": "聯發科",
       "direction": "buy",
-      "delta_lot": 3210,
-      "delta_value_yi": 6.9,
-      "etf_count": 5,
-      "weight_delta_pct": 0.38,
-      "signal": "聯發科 被 5 檔 ETF 同步加碼，屬於共識買盤。"
-    },
-    {
-      "stock_code": "2881",
-      "stock_name": "富邦金",
-      "direction": "buy",
-      "delta_lot": 8850,
-      "delta_value_yi": 5.4,
-      "etf_count": 6,
-      "weight_delta_pct": 0.24,
-      "signal": "富邦金 被 6 檔 ETF 同步加碼，屬於共識買盤。"
-    },
-    {
-      "stock_code": "2308",
-      "stock_name": "台達電",
-      "direction": "buy",
-      "delta_lot": 4170,
-      "delta_value_yi": 4.7,
-      "etf_count": 4,
-      "weight_delta_pct": 0.19,
-      "signal": "台達電 今日 ETF 籌碼變化需持續觀察。"
-    },
-    {
-      "stock_code": "2603",
-      "stock_name": "長榮",
-      "direction": "sell",
-      "delta_lot": -11600,
-      "delta_value_yi": -7.6,
-      "etf_count": 5,
-      "weight_delta_pct": -0.35,
-      "signal": "長榮 遭 5 檔 ETF 同步減碼，短線籌碼偏弱。"
-    },
-    {
-      "stock_code": "2382",
-      "stock_name": "廣達",
-      "direction": "sell",
-      "delta_lot": -6090,
-      "delta_value_yi": -6.8,
-      "etf_count": 4,
-      "weight_delta_pct": -0.31,
-      "signal": "廣達 遭 4 檔 ETF 同步減碼，短線籌碼偏弱。"
-    },
-    {
-      "stock_code": "2891",
-      "stock_name": "中信金",
-      "direction": "buy",
-      "delta_lot": 17020,
-      "delta_value_yi": 5.8,
-      "etf_count": 5,
-      "weight_delta_pct": 0.22,
-      "signal": "中信金 被 5 檔 ETF 同步加碼，屬於共識買盤。"
-    },
-    {
-      "stock_code": "3037",
-      "stock_name": "欣興",
-      "direction": "sell",
-      "delta_lot": -4300,
-      "delta_value_yi": -3.1,
+      "delta_lot": 2490.0,
+      "delta_value_yi": 29.38,
       "etf_count": 3,
-      "weight_delta_pct": -0.18,
-      "signal": "欣興 今日 ETF 籌碼變化需持續觀察。"
+      "weight_delta_pct": 0.0249,
+      "signal": "聯發科 被 3 檔 ETF 加碼，估算買盤 29.38 億元，建議觀察是否延續。",
+      "participating_etfs": [
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "buy",
+          "delta_lot": 1200.0,
+          "delta_value_yi": 14.16,
+          "weight_delta_pct": 0.012
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "buy",
+          "delta_lot": 880.0,
+          "delta_value_yi": 10.384,
+          "weight_delta_pct": 0.0088
+        },
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "buy",
+          "delta_lot": 410.0,
+          "delta_value_yi": 4.838,
+          "weight_delta_pct": 0.0041
+        }
+      ]
+    },
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
+      "direction": "buy",
+      "delta_lot": 12900.0,
+      "delta_value_yi": 21.93,
+      "etf_count": 5,
+      "weight_delta_pct": 0.129,
+      "signal": "鴻海 被 5 檔 ETF 同步加碼，估算買盤 21.93 億元，屬於高共識買盤。",
+      "participating_etfs": [
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "buy",
+          "delta_lot": 5200.0,
+          "delta_value_yi": 8.84,
+          "weight_delta_pct": 0.052
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "buy",
+          "delta_lot": 3100.0,
+          "delta_value_yi": 5.27,
+          "weight_delta_pct": 0.031
+        },
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "buy",
+          "delta_lot": 2400.0,
+          "delta_value_yi": 4.08,
+          "weight_delta_pct": 0.024
+        },
+        {
+          "etf_code": "00878",
+          "etf_name": "國泰永續高股息",
+          "direction": "buy",
+          "delta_lot": 1300.0,
+          "delta_value_yi": 2.21,
+          "weight_delta_pct": 0.013
+        },
+        {
+          "etf_code": "00919",
+          "etf_name": "群益台灣精選高息",
+          "direction": "buy",
+          "delta_lot": 900.0,
+          "delta_value_yi": 1.53,
+          "weight_delta_pct": 0.009
+        }
+      ]
     },
     {
       "stock_code": "3711",
       "stock_name": "日月光投控",
       "direction": "buy",
-      "delta_lot": 5380,
-      "delta_value_yi": 3.0,
+      "delta_lot": 5380.0,
+      "delta_value_yi": 8.34,
       "etf_count": 3,
-      "weight_delta_pct": 0.13,
-      "signal": "日月光投控 今日 ETF 籌碼變化需持續觀察。"
+      "weight_delta_pct": 0.0538,
+      "signal": "日月光投控 被 3 檔 ETF 加碼，估算買盤 8.34 億元，建議觀察是否延續。",
+      "participating_etfs": [
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "buy",
+          "delta_lot": 2600.0,
+          "delta_value_yi": 4.03,
+          "weight_delta_pct": 0.026
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "buy",
+          "delta_lot": 1800.0,
+          "delta_value_yi": 2.79,
+          "weight_delta_pct": 0.018
+        },
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "buy",
+          "delta_lot": 980.0,
+          "delta_value_yi": 1.519,
+          "weight_delta_pct": 0.0098
+        }
+      ]
+    },
+    {
+      "stock_code": "2881",
+      "stock_name": "富邦金",
+      "direction": "buy",
+      "delta_lot": 6250.0,
+      "delta_value_yi": 4.88,
+      "etf_count": 4,
+      "weight_delta_pct": 0.0625,
+      "signal": "富邦金 被 4 檔 ETF 加碼，估算買盤 4.88 億元，建議觀察是否延續。",
+      "participating_etfs": [
+        {
+          "etf_code": "00878",
+          "etf_name": "國泰永續高股息",
+          "direction": "buy",
+          "delta_lot": 2800.0,
+          "delta_value_yi": 2.184,
+          "weight_delta_pct": 0.028
+        },
+        {
+          "etf_code": "00919",
+          "etf_name": "群益台灣精選高息",
+          "direction": "buy",
+          "delta_lot": 2400.0,
+          "delta_value_yi": 1.872,
+          "weight_delta_pct": 0.024
+        },
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "buy",
+          "delta_lot": 650.0,
+          "delta_value_yi": 0.507,
+          "weight_delta_pct": 0.0065
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "buy",
+          "delta_lot": 400.0,
+          "delta_value_yi": 0.312,
+          "weight_delta_pct": 0.004
+        }
+      ]
+    },
+    {
+      "stock_code": "2891",
+      "stock_name": "中信金",
+      "direction": "buy",
+      "delta_lot": 9500.0,
+      "delta_value_yi": 3.61,
+      "etf_count": 2,
+      "weight_delta_pct": 0.095,
+      "signal": "中信金 被 2 檔 ETF 加碼，估算買盤 3.61 億元，建議觀察是否延續。",
+      "participating_etfs": [
+        {
+          "etf_code": "00878",
+          "etf_name": "國泰永續高股息",
+          "direction": "buy",
+          "delta_lot": 5200.0,
+          "delta_value_yi": 1.976,
+          "weight_delta_pct": 0.052
+        },
+        {
+          "etf_code": "00919",
+          "etf_name": "群益台灣精選高息",
+          "direction": "buy",
+          "delta_lot": 4300.0,
+          "delta_value_yi": 1.634,
+          "weight_delta_pct": 0.043
+        }
+      ]
+    },
+    {
+      "stock_code": "2382",
+      "stock_name": "廣達",
+      "direction": "sell",
+      "delta_lot": -530.0,
+      "delta_value_yi": -1.38,
+      "etf_count": 3,
+      "weight_delta_pct": -0.0439,
+      "signal": "廣達 遭 3 檔 ETF 減碼，估算賣壓 1.38 億元，需觀察是否擴散。",
+      "participating_etfs": [
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "sell",
+          "delta_lot": -260.0,
+          "delta_value_yi": -0.676,
+          "weight_delta_pct": -0.023
+        },
+        {
+          "etf_code": "0050",
+          "etf_name": "元大台灣50",
+          "direction": "sell",
+          "delta_lot": -180.0,
+          "delta_value_yi": -0.468,
+          "weight_delta_pct": -0.012
+        },
+        {
+          "etf_code": "006208",
+          "etf_name": "富邦台50",
+          "direction": "sell",
+          "delta_lot": -90.0,
+          "delta_value_yi": -0.234,
+          "weight_delta_pct": -0.0089
+        }
+      ]
+    },
+    {
+      "stock_code": "2603",
+      "stock_name": "長榮",
+      "direction": "sell",
+      "delta_lot": -770.0,
+      "delta_value_yi": -1.31,
+      "etf_count": 2,
+      "weight_delta_pct": -0.072,
+      "signal": "長榮 遭 2 檔 ETF 減碼，估算賣壓 1.31 億元，需觀察是否擴散。",
+      "participating_etfs": [
+        {
+          "etf_code": "00919",
+          "etf_name": "群益台灣精選高息",
+          "direction": "sell",
+          "delta_lot": -420.0,
+          "delta_value_yi": -0.714,
+          "weight_delta_pct": -0.042
+        },
+        {
+          "etf_code": "00878",
+          "etf_name": "國泰永續高股息",
+          "direction": "sell",
+          "delta_lot": -350.0,
+          "delta_value_yi": -0.595,
+          "weight_delta_pct": -0.03
+        }
+      ]
+    },
+    {
+      "stock_code": "3037",
+      "stock_name": "欣興",
+      "direction": "sell",
+      "delta_lot": -180.0,
+      "delta_value_yi": -0.33,
+      "etf_count": 1,
+      "weight_delta_pct": -0.019,
+      "signal": "欣興 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": [
+        {
+          "etf_code": "00929",
+          "etf_name": "復華台灣科技優息",
+          "direction": "sell",
+          "delta_lot": -180.0,
+          "delta_value_yi": -0.333,
+          "weight_delta_pct": -0.019
+        }
+      ]
     }
   ],
   "stock_radar": [
     {
       "stock_code": "2330",
       "stock_name": "台積電",
-      "buy_etfs": 9,
+      "buy_etfs": 5,
       "sell_etfs": 0,
-      "net_value_yi": 18.7,
-      "streak_days": 2,
-      "event_type": "共識加碼",
-      "note": "台積電 被 9 檔 ETF 同步加碼，屬於共識買盤。"
-    },
-    {
-      "stock_code": "2317",
-      "stock_name": "鴻海",
-      "buy_etfs": 7,
-      "sell_etfs": 1,
-      "net_value_yi": 10.3,
-      "streak_days": 2,
-      "event_type": "共識加碼",
-      "note": "鴻海 被 7 檔 ETF 同步加碼，屬於共識買盤。"
+      "net_value_yi": 133.95,
+      "streak_days": 1,
+      "event_type": "高共識加碼",
+      "note": "台積電 被 5 檔 ETF 同步加碼，估算買盤 133.95 億元，屬於高共識買盤。"
     },
     {
       "stock_code": "2454",
       "stock_name": "聯發科",
+      "buy_etfs": 3,
+      "sell_etfs": 0,
+      "net_value_yi": 29.38,
+      "streak_days": 1,
+      "event_type": "共識加碼",
+      "note": "聯發科 被 3 檔 ETF 加碼，估算買盤 29.38 億元，建議觀察是否延續。"
+    },
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
       "buy_etfs": 5,
       "sell_etfs": 0,
-      "net_value_yi": 6.9,
-      "streak_days": 4,
+      "net_value_yi": 21.93,
+      "streak_days": 1,
+      "event_type": "高共識加碼",
+      "note": "鴻海 被 5 檔 ETF 同步加碼，估算買盤 21.93 億元，屬於高共識買盤。"
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "日月光投控",
+      "buy_etfs": 3,
+      "sell_etfs": 0,
+      "net_value_yi": 8.34,
+      "streak_days": 1,
       "event_type": "共識加碼",
-      "note": "聯發科 被 5 檔 ETF 同步加碼，屬於共識買盤。"
+      "note": "日月光投控 被 3 檔 ETF 加碼，估算買盤 8.34 億元，建議觀察是否延續。"
     },
     {
       "stock_code": "2881",
       "stock_name": "富邦金",
-      "buy_etfs": 6,
+      "buy_etfs": 4,
       "sell_etfs": 0,
-      "net_value_yi": 5.4,
-      "streak_days": 3,
+      "net_value_yi": 4.88,
+      "streak_days": 1,
       "event_type": "共識加碼",
-      "note": "富邦金 被 6 檔 ETF 同步加碼，屬於共識買盤。"
+      "note": "富邦金 被 4 檔 ETF 加碼，估算買盤 4.88 億元，建議觀察是否延續。"
     },
     {
-      "stock_code": "2308",
-      "stock_name": "台達電",
-      "buy_etfs": 4,
-      "sell_etfs": 1,
-      "net_value_yi": 4.7,
-      "streak_days": 5,
+      "stock_code": "2891",
+      "stock_name": "中信金",
+      "buy_etfs": 2,
+      "sell_etfs": 0,
+      "net_value_yi": 3.61,
+      "streak_days": 1,
       "event_type": "共識加碼",
-      "note": "台達電 今日 ETF 籌碼變化需持續觀察。"
+      "note": "中信金 被 2 檔 ETF 加碼，估算買盤 3.61 億元，建議觀察是否延續。"
+    },
+    {
+      "stock_code": "2382",
+      "stock_name": "廣達",
+      "buy_etfs": 0,
+      "sell_etfs": 3,
+      "net_value_yi": -1.38,
+      "streak_days": 1,
+      "event_type": "共識減碼",
+      "note": "廣達 遭 3 檔 ETF 減碼，估算賣壓 1.38 億元，需觀察是否擴散。"
     },
     {
       "stock_code": "2603",
       "stock_name": "長榮",
-      "buy_etfs": 1,
-      "sell_etfs": 5,
-      "net_value_yi": -7.6,
-      "streak_days": 4,
+      "buy_etfs": 0,
+      "sell_etfs": 2,
+      "net_value_yi": -1.31,
+      "streak_days": 1,
       "event_type": "共識減碼",
-      "note": "長榮 遭 5 檔 ETF 同步減碼，短線籌碼偏弱。"
+      "note": "長榮 遭 2 檔 ETF 減碼，估算賣壓 1.31 億元，需觀察是否擴散。"
+    },
+    {
+      "stock_code": "3037",
+      "stock_name": "欣興",
+      "buy_etfs": 0,
+      "sell_etfs": 1,
+      "net_value_yi": -0.33,
+      "streak_days": 1,
+      "event_type": "共識減碼",
+      "note": "欣興 今日 ETF 籌碼變化有限，暫列觀察。"
     }
   ],
   "etf_rankings": [
@@ -181,48 +456,68 @@
       "etf_code": "0050",
       "etf_name": "元大台灣50",
       "aum_yi": 4050.3,
-      "buy_value_yi": 11.1,
-      "sell_value_yi": 9.9,
-      "net_flow_yi": 1.2,
-      "turnover_pct": 0.4,
+      "buy_value_yi": 86.44,
+      "sell_value_yi": 0.47,
+      "net_flow_yi": 85.97,
+      "turnover_pct": 2.15,
       "top10_weight_pct": 72.8
+    },
+    {
+      "etf_code": "006208",
+      "etf_name": "富邦台50",
+      "aum_yi": 1850.2,
+      "buy_value_yi": 36.81,
+      "sell_value_yi": 0.23,
+      "net_flow_yi": 36.57,
+      "turnover_pct": 2.0,
+      "top10_weight_pct": 71.4
     },
     {
       "etf_code": "00878",
       "etf_name": "國泰永續高股息",
       "aum_yi": 3210.8,
-      "buy_value_yi": 8.4,
-      "sell_value_yi": 6.2,
-      "net_flow_yi": 2.2,
-      "turnover_pct": 0.8,
+      "buy_value_yi": 31.07,
+      "sell_value_yi": 0.59,
+      "net_flow_yi": 30.48,
+      "turnover_pct": 0.99,
       "top10_weight_pct": 46.1
     },
     {
       "etf_code": "00919",
       "etf_name": "群益台灣精選高息",
       "aum_yi": 2789.0,
-      "buy_value_yi": 7.9,
-      "sell_value_yi": 11.8,
-      "net_flow_yi": -3.9,
-      "turnover_pct": 1.1,
+      "buy_value_yi": 24.99,
+      "sell_value_yi": 0.71,
+      "net_flow_yi": 24.27,
+      "turnover_pct": 0.92,
       "top10_weight_pct": 42.7
+    },
+    {
+      "etf_code": "00929",
+      "etf_name": "復華台灣科技優息",
+      "aum_yi": 1640.6,
+      "buy_value_yi": 22.79,
+      "sell_value_yi": 1.01,
+      "net_flow_yi": 21.78,
+      "turnover_pct": 1.45,
+      "top10_weight_pct": 52.2
     }
   ],
   "events": [
     {
       "time": "盤後",
       "title": "台積電 成為今日 ETF 最大共識買盤",
-      "desc": "估算加碼 18.7 億元，參與 ETF 家數 9 檔。"
+      "desc": "估算加碼 133.95 億元，參與 ETF 5 檔。"
     },
     {
       "time": "盤後",
-      "title": "長榮 出現 ETF 共識減碼",
-      "desc": "估算減碼 7.6 億元，需觀察是否連續。"
+      "title": "廣達 出現 ETF 共識減碼",
+      "desc": "估算減碼 1.38 億元，參與 ETF 3 檔。"
     },
     {
-      "time": "盤後",
-      "title": "AI 日報已更新",
-      "desc": "今日報告由持股差分、ETF 家數、估算市值與集中度指標產生。"
+      "time": "資料檢查",
+      "title": "ETF 持股快照覆蓋率",
+      "desc": "今日已覆蓋 5/5 檔 ETF，覆蓋率 100.0%。"
     }
   ],
   "data_sources": [
@@ -230,7 +525,7 @@
       "name": "TWSE ETF e添富",
       "type": "ETF master / AUM / ranking",
       "update_freq": "每日或盤中依官方更新",
-      "status": "ready",
+      "status": "watch",
       "fields": [
         "etf_code",
         "etf_name",
@@ -244,47 +539,12 @@
       "name": "TWSE / TPEx ETF 交易資料",
       "type": "成交價量 / 折溢價輔助",
       "update_freq": "交易日",
-      "status": "ready",
+      "status": "watch",
       "fields": [
         "close",
         "volume",
         "turnover",
         "premium_discount"
-      ]
-    },
-    {
-      "name": "SITCA ETF 專區",
-      "type": "產業統計 / 明細資料入口",
-      "update_freq": "月 / 季 / 不定期",
-      "status": "ready",
-      "fields": [
-        "fund_type",
-        "issuer",
-        "monthly_top5",
-        "quarter_holdings"
-      ]
-    },
-    {
-      "name": "MOPS 公開資訊觀測站",
-      "type": "公開說明書 / 財報 / 基金資訊",
-      "update_freq": "依公告",
-      "status": "manual",
-      "fields": [
-        "prospectus",
-        "financial_report",
-        "fund_nav",
-        "holdings"
-      ]
-    },
-    {
-      "name": "集保 ETF 觀測站",
-      "type": "預估淨值 / 折溢價 / 成分證券資訊",
-      "update_freq": "盤中 / 每日",
-      "status": "watch",
-      "fields": [
-        "iNAV",
-        "premium_discount",
-        "constituents"
       ]
     },
     {
@@ -299,18 +559,32 @@
         "cash_component",
         "creation_unit"
       ]
+    },
+    {
+      "name": "raw/holdings snapshot",
+      "type": "本系統標準化後持股快照",
+      "update_freq": "每日",
+      "status": "ready",
+      "fields": [
+        "trade_date",
+        "etf_code",
+        "stock_code",
+        "shares",
+        "weight_pct",
+        "close"
+      ]
     }
   ],
   "ai_report": {
-    "headline": "今日 ETF 籌碼 偏多，前十大變動淨額 37.3 億元。",
-    "summary": "今日跨 ETF 持股變動顯示，整體籌碼方向為偏多。前十大變動集中度為 50，代表資金是否集中在少數權值股需要特別觀察。最大買盤為 2330 台積電，估算加碼 18.7 億元。最大賣壓為 2603 長榮，估算減碼 7.6 億元。",
+    "headline": "今日全市場 ETF 籌碼偏多，前十大變動淨額 199.1 億元。",
+    "summary": "本報告以 TWSE + TPEx 全部 ETF 為分析範圍，今日持股快照覆蓋率為 100.0%。跨 ETF 持股差分顯示，共識加碼股票 6 檔，共識減碼股票 2 檔。前三大變動占整體變動絕對值 90%，可用來衡量今日 ETF 資金是否集中於少數權值股。最大買盤為 2330 台積電，估算加碼 133.95 億元，參與 ETF 5 檔。最大賣壓為 2382 廣達，估算減碼 1.38 億元，參與 ETF 3 檔。",
     "watchlist": [
-      "2330 台積電：ETF 加碼 18.7 億，參與 ETF 9 檔",
-      "2317 鴻海：ETF 加碼 10.3 億，參與 ETF 7 檔",
-      "2454 聯發科：ETF 加碼 6.9 億，參與 ETF 5 檔",
-      "2881 富邦金：ETF 加碼 5.4 億，參與 ETF 6 檔",
-      "2308 台達電：ETF 加碼 4.7 億，參與 ETF 4 檔"
+      "2330 台積電：ETF 加碼 133.95 億，參與 ETF 5 檔",
+      "2454 聯發科：ETF 加碼 29.38 億，參與 ETF 3 檔",
+      "2317 鴻海：ETF 加碼 21.93 億，參與 ETF 5 檔",
+      "3711 日月光投控：ETF 加碼 8.34 億，參與 ETF 3 檔",
+      "2881 富邦金：ETF 加碼 4.88 億，參與 ETF 4 檔"
     ],
-    "risk": "若買盤集中在少數大型權值股，隔日需觀察是否延續，避免把一次性調倉誤判為趨勢。"
+    "risk": "此版本使用 sample holdings snapshot 驗證資料流程；正式上線後，需確認 TWSE / TPEx / 投信 PCF 資料完整性。若覆蓋率未達 100%，請避免將報告視為完整市場結論。"
   }
 }

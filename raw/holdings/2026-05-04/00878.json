@@ -1,0 +1,50 @@
+{
+  "trade_date": "2026-05-04",
+  "etf_code": "00878",
+  "etf_name": "國泰永續高股息",
+  "issuer": "國泰投信",
+  "market": "TWSE",
+  "source": "sample_holdings_snapshot",
+  "holdings": [
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
+      "shares": 1520000,
+      "weight_pct": 3.113,
+      "close": 170,
+      "market_value": 258400000
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "台積電",
+      "shares": 2860000,
+      "weight_pct": 8.126,
+      "close": 950,
+      "market_value": 2717000000
+    },
+    {
+      "stock_code": "2603",
+      "stock_name": "長榮",
+      "shares": 0,
+      "weight_pct": 4.77,
+      "close": 170,
+      "market_value": 0
+    },
+    {
+      "stock_code": "2881",
+      "stock_name": "富邦金",
+      "shares": 3280000,
+      "weight_pct": 5.228,
+      "close": 78,
+      "market_value": 255840000
+    },
+    {
+      "stock_code": "2891",
+      "stock_name": "中信金",
+      "shares": 5800000,
+      "weight_pct": 4.352,
+      "close": 38,
+      "market_value": 220400000
+    }
+  ]
+}

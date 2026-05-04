@@ -1,0 +1,50 @@
+{
+  "trade_date": "2026-05-01",
+  "etf_code": "00929",
+  "etf_name": "復華台灣科技優息",
+  "issuer": "復華投信",
+  "market": "TWSE",
+  "source": "sample_holdings_snapshot",
+  "holdings": [
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
+      "shares": 240000,
+      "weight_pct": 5.1,
+      "close": 170.0,
+      "market_value": 40800000.0
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "台積電",
+      "shares": 160000,
+      "weight_pct": 12.5,
+      "close": 950.0,
+      "market_value": 152000000.0
+    },
+    {
+      "stock_code": "2382",
+      "stock_name": "廣達",
+      "shares": 260000,
+      "weight_pct": 5.6,
+      "close": 260.0,
+      "market_value": 67600000.0
+    },
+    {
+      "stock_code": "2454",
+      "stock_name": "聯發科",
+      "shares": 55000,
+      "weight_pct": 4.8,
+      "close": 1180.0,
+      "market_value": 64900000.0
+    },
+    {
+      "stock_code": "3037",
+      "stock_name": "欣興",
+      "shares": 180000,
+      "weight_pct": 3.2,
+      "close": 185.0,
+      "market_value": 33300000.0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "trade_date": "2026-05-04",
+  "etf_code": "006208",
+  "etf_name": "富邦台50",
+  "issuer": "富邦投信",
+  "market": "TWSE",
+  "source": "sample_holdings_snapshot",
+  "holdings": [
+    {
+      "stock_code": "2317",
+      "stock_name": "鴻海",
+      "shares": 3360000,
+      "weight_pct": 4.631,
+      "close": 170,
+      "market_value": 571200000
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "台積電",
+      "shares": 2320000,
+      "weight_pct": 46.119,
+      "close": 950,
+      "market_value": 2204000000
+    },
+    {
+      "stock_code": "2382",
+      "stock_name": "廣達",
+      "shares": 0,
+      "weight_pct": 1.9911,
+      "close": 260,
+      "market_value": 0
+    },
+    {
+      "stock_code": "2454",
+      "stock_name": "聯發科",
+      "shares": 960000,
+      "weight_pct": 5.2088,
+      "close": 1180,
+      "market_value": 1132800000
+    },
+    {
+      "stock_code": "2881",
+      "stock_name": "富邦金",
+      "shares": 560000,
+      "weight_pct": 1.204,
+      "close": 78,
+      "market_value": 43680000
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "日月光投控",
+      "shares": 1800000,
+      "weight_pct": 0.018,
+      "close": 155,
+      "market_value": 279000000
+    }
+  ]
+}
