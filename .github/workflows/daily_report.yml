@@ -3,21 +3,17 @@ name: Generate Daily ETF Report
 on:
   workflow_dispatch:
   schedule:
-    # 台灣時間 14:45：第一次嘗試，通常是最早合理產出時間
-    - cron: "45 14 * * 1-5"
-      timezone: "Asia/Taipei"
+    # 台灣 14:45 = UTC 06:45
+    - cron: "45 6 * * 1-5"
 
-    # 台灣時間 15:15：資料未齊時的第二次嘗試
-    - cron: "15 15 * * 1-5"
-      timezone: "Asia/Taipei"
+    # 台灣 15:15 = UTC 07:15
+    - cron: "15 7 * * 1-5"
 
-    # 台灣時間 15:45：第三次嘗試
-    - cron: "45 15 * * 1-5"
-      timezone: "Asia/Taipei"
+    # 台灣 15:45 = UTC 07:45
+    - cron: "45 7 * * 1-5"
 
-    # 台灣時間 16:15：最後備援
-    - cron: "15 16 * * 1-5"
-      timezone: "Asia/Taipei"
+    # 台灣 16:15 = UTC 08:15
+    - cron: "15 8 * * 1-5"
 
 permissions:
   contents: write
@@ -27,11 +23,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      # 目前先用正式 schema + 範例資料驗證網站。
-      # 等你完成 TWSE / TPEx / 投信 PCF adapters 後，改成 "0"。
-      USE_SAMPLE_DATA: "1"
+      USE_SAMPLE_HOLDINGS: "1"
       MIN_COVERAGE_RATIO: "0.85"
-      ALLOW_PARTIAL_REPORT: "0"
+      ALLOW_PARTIAL_REPORT: "1"
       TOP_N_STOCKS: "10"
       LOG_LEVEL: "INFO"
 
@@ -57,6 +51,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest_report.json history/*.json
+          git add data/latest_report.json history/*.json raw/holdings/**/*.json
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update daily ETF report"
           git push
