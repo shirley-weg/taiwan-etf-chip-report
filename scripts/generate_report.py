@@ -18,13 +18,6 @@ def now_taipei():
 
 
 def fetch_etf_master():
-    """
-    MVP 先用示範資料。
-    正式版之後會改成抓：
-    - TWSE ETF e添富
-    - TPEx ETF 資料
-    - SITCA ETF 專區
-    """
     return [
         {
             "etf_code": "0050",
@@ -297,7 +290,7 @@ def main():
             "report_date": report_date,
             "updated_at": updated_at,
             "tracked_etfs": len(etf_rankings),
-            "universe": "Taiwan ETF",
+            "universe": "TWSE + TPEx 全部 ETF",
             "market_bias": market_bias,
         },
         "kpis": kpis,
