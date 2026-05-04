@@ -5,293 +5,579 @@ import logging
 import os
 import tempfile
 from collections import defaultdict
-from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, Iterable, List, Optional
 from zoneinfo import ZoneInfo
 
 
 # ============================================================
-# Taiwan ETF Chip Report Generator
+# Taiwan ETF Chip Report - Snapshot MVP
 # ------------------------------------------------------------
-# Purpose:
-#   1. Build a daily all-market Taiwan ETF chip-flow report.
-#   2. Output data/latest_report.json for GitHub Pages frontend.
-#   3. Output history/YYYY-MM-DD.json for historical archive.
-#   4. Preserve participating ETF details for each stock signal.
+# What this version does:
+#   1. Creates raw/holdings/YYYY-MM-DD/{etf_code}.json snapshots.
+#   2. Uses sample holdings to generate yesterday + today snapshots.
+#   3. Loads yesterday and today snapshots.
+#   4. Calculates per-ETF stock holding diffs.
+#   5. Aggregates all ETF diffs into stock-level top changes.
+#   6. Preserves participating_etfs details for frontend modal.
+#   7. Outputs:
+#        - data/latest_report.json
+#        - history/YYYY-MM-DD.json
 #
-# Production design:
-#   - GitHub Actions runs this script after Taiwan market close.
-#   - Official source adapters should replace SAMPLE_MODE functions.
-#   - The frontend should never fetch official sites directly.
+# How to use:
+#   Put this file at:
+#       scripts/generate_report.py
+#
+#   Then run:
+#       python scripts/generate_report.py
+#
+# Later production upgrade:
+#   Replace generate_sample_holdings_snapshots() with real crawlers:
+#       - fetch_all_twse_tpex_etfs()
+#       - fetch_today_all_etf_holdings()
 # ============================================================
 
 
+# ----------------------------
+# Runtime configuration
+# ----------------------------
 ROOT = Path(__file__).resolve().parents[1]
+
 DATA_DIR = ROOT / "data"
 HISTORY_DIR = ROOT / "history"
-DATA_DIR.mkdir(exist_ok=True)
-HISTORY_DIR.mkdir(exist_ok=True)
+RAW_HOLDINGS_DIR = ROOT / "raw" / "holdings"
+
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+RAW_HOLDINGS_DIR.mkdir(parents=True, exist_ok=True)
 
 TAIPEI_TZ = ZoneInfo("Asia/Taipei")
 
-# Keep USE_SAMPLE_DATA=1 until real source adapters are implemented.
-# In GitHub Actions, change this to 0 after TWSE/TPEx/PCF adapters are ready.
-USE_SAMPLE_DATA = os.getenv("USE_SAMPLE_DATA", "1").strip() == "1"
+# SAMPLE_MODE=true means this script creates yesterday/today sample holdings.
+# After real crawlers are completed, set USE_SAMPLE_HOLDINGS=0 in GitHub Actions.
+USE_SAMPLE_HOLDINGS = os.getenv("USE_SAMPLE_HOLDINGS", "1").strip() == "1"
+
 TOP_N_STOCKS = int(os.getenv("TOP_N_STOCKS", "10"))
 MIN_COVERAGE_RATIO = float(os.getenv("MIN_COVERAGE_RATIO", "0.85"))
-ALLOW_PARTIAL_REPORT = os.getenv("ALLOW_PARTIAL_REPORT", "0").strip() == "1"
+ALLOW_PARTIAL_REPORT = os.getenv("ALLOW_PARTIAL_REPORT", "1").strip() == "1"
+
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
-
 logging.basicConfig(level=LOG_LEVEL, format="%(asctime)s | %(levelname)s | %(message)s")
-logger = logging.getLogger("etf-report")
-
-Direction = Literal["buy", "sell", "neutral"]
+logger = logging.getLogger("etf-snapshot-report")
 
 
-@dataclass(frozen=True)
-class ETFMaster:
-    etf_code: str
-    etf_name: str
-    issuer: str = ""
-    market: Literal["TWSE", "TPEx", "UNKNOWN"] = "UNKNOWN"
-    aum_yi: float = 0.0
-    close: float = 0.0
-    turnover_pct: float = 0.0
-    top10_weight_pct: float = 0.0
-
-
-@dataclass(frozen=True)
-class ETFStockDiff:
-    etf_code: str
-    etf_name: str
-    stock_code: str
-    stock_name: str
-    delta_lot: float
-    delta_value_yi: float
-    weight_delta_pct: float = 0.0
-
-
+# ============================================================
+# Utility functions
+# ============================================================
 def now_taipei() -> datetime:
     return datetime.now(TAIPEI_TZ)
 
 
-def round_money(value: float, digits: int = 2) -> float:
-    return round(float(value), digits)
+def previous_business_day(d: date) -> date:
+    """
+    Simple previous business day logic.
+    For production, replace with TWSE trading calendar to handle holidays.
+    """
+    prev = d - timedelta(days=1)
+    while prev.weekday() >= 5:  # 5=Saturday, 6=Sunday
+        prev -= timedelta(days=1)
+    return prev
 
 
-def round_lot(value: float, digits: int = 1) -> float:
-    return round(float(value), digits)
-
-
-def decide_direction(value: float, tolerance: float = 1e-9) -> Direction:
-    if value > tolerance:
-        return "buy"
-    if value < -tolerance:
-        return "sell"
-    return "neutral"
+def to_date_str(d: date) -> str:
+    return d.strftime("%Y-%m-%d")
 
 
 def safe_float(value: Any, default: float = 0.0) -> float:
     try:
-        if value is None:
+        if value is None or value == "":
             return default
         return float(value)
     except (TypeError, ValueError):
         return default
 
 
+def safe_int(value: Any, default: int = 0) -> int:
+    try:
+        if value is None or value == "":
+            return default
+        return int(float(value))
+    except (TypeError, ValueError):
+        return default
+
+
+def direction_from_value(value: float) -> str:
+    if value > 0:
+        return "buy"
+    if value < 0:
+        return "sell"
+    return "neutral"
+
+
 def atomic_write_json(path: Path, payload: Dict[str, Any]) -> None:
-    """Write JSON atomically to avoid partially-written report files."""
+    """
+    Avoid partially-written JSON files.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=str(path.parent), delete=False, suffix=".tmp") as tmp:
+
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        dir=str(path.parent),
+        delete=False,
+        suffix=".tmp",
+    ) as tmp:
         json.dump(payload, tmp, ensure_ascii=False, indent=2)
         tmp.write("\n")
         tmp_path = Path(tmp.name)
+
     tmp_path.replace(path)
 
 
-# ============================================================
-# Official data adapters
-# ============================================================
-def fetch_all_twse_tpex_etfs() -> List[ETFMaster]:
-    """
-    Return the complete Taiwan ETF universe.
-
-    Production target:
-      - TWSE listed ETFs
-      - TPEx listed ETFs
-      - ETF name, issuer, market, AUM, close, concentration if available
-
-    Current implementation:
-      - USE_SAMPLE_DATA=1 returns deterministic sample data.
-      - USE_SAMPLE_DATA=0 raises NotImplementedError until official adapters are implemented.
-    """
-    if USE_SAMPLE_DATA:
-        return build_sample_etf_master()
-
-    raise NotImplementedError(
-        "Official TWSE/TPEx ETF master adapters are not implemented yet. "
-        "Implement fetch_all_twse_tpex_etfs() with TWSE + TPEx sources, "
-        "or keep USE_SAMPLE_DATA=1 for UI testing."
-    )
-
-
-def fetch_all_etf_stock_diffs(etf_master: List[ETFMaster]) -> List[ETFStockDiff]:
-    """
-    Return ETF-level stock holding diffs.
-
-    Each row means ETF X changed its holding of stock Y today.
-
-    Production target:
-      today ETF holdings - previous ETF holdings = per-ETF stock diff
-
-    Required official input:
-      - Today's PCF / daily holdings for each ETF
-      - Yesterday's PCF / daily holdings for each ETF
-      - Stock close price or official valuation price
-      - Weight percentage where available
-    """
-    if USE_SAMPLE_DATA:
-        return build_sample_etf_stock_diffs(etf_master)
-
-    raise NotImplementedError(
-        "Official ETF holdings/PCF adapters are not implemented yet. "
-        "Implement fetch_all_etf_stock_diffs() to fetch issuer PCF/daily holdings "
-        "and compute today-vs-yesterday diffs."
-    )
+def read_json(path: Path) -> Dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 # ============================================================
-# Deterministic sample data for UI and pipeline validation
+# ETF master sample
 # ============================================================
-def build_sample_etf_master() -> List[ETFMaster]:
+def fetch_all_twse_tpex_etfs() -> List[Dict[str, Any]]:
+    """
+    MVP:
+      Returns sample ETF universe.
+
+    Production:
+      Replace this with TWSE + TPEx ETF master crawlers.
+
+    Required fields:
+      etf_code, etf_name, issuer, market, aum_yi
+    """
     return [
-        ETFMaster("0050", "元大台灣50", "元大投信", "TWSE", 4050.3, 185.2, 0.4, 72.8),
-        ETFMaster("006208", "富邦台50", "富邦投信", "TWSE", 1850.2, 112.5, 0.5, 71.4),
-        ETFMaster("0056", "元大高股息", "元大投信", "TWSE", 2890.4, 37.8, 0.7, 39.8),
-        ETFMaster("00878", "國泰永續高股息", "國泰投信", "TWSE", 3210.8, 23.1, 0.8, 46.1),
-        ETFMaster("00919", "群益台灣精選高息", "群益投信", "TWSE", 2789.0, 24.3, 1.1, 42.7),
-        ETFMaster("00929", "復華台灣科技優息", "復華投信", "TWSE", 1640.6, 19.8, 1.5, 52.2),
-        ETFMaster("00922", "國泰台灣領袖50", "國泰投信", "TWSE", 820.3, 22.4, 1.0, 66.4),
-        ETFMaster("00923", "群益台ESG低碳50", "群益投信", "TWSE", 510.5, 21.9, 0.9, 61.7),
-        ETFMaster("00713", "元大台灣高息低波", "元大投信", "TWSE", 1410.9, 57.2, 0.8, 41.3),
-        ETFMaster("00915", "凱基優選高股息30", "凱基投信", "TWSE", 760.1, 26.8, 0.7, 44.0),
-        ETFMaster("00900", "富邦特選高股息30", "富邦投信", "TWSE", 390.7, 14.2, 0.6, 38.2),
-        ETFMaster("00918", "大華優利高填息30", "大華銀投信", "TWSE", 640.2, 22.1, 0.8, 40.4),
-        ETFMaster("00927", "群益半導體收益", "群益投信", "TWSE", 450.6, 18.6, 1.2, 58.8),
-        ETFMaster("00881", "國泰台灣5G+", "國泰投信", "TWSE", 720.4, 17.4, 1.0, 57.1),
-        ETFMaster("00892", "富邦台灣半導體", "富邦投信", "TWSE", 610.2, 13.8, 1.1, 60.9),
-    ]
-
-
-def build_sample_etf_stock_diffs(etf_master: List[ETFMaster]) -> List[ETFStockDiff]:
-    raw = [
-        ("0050", "2330", "台積電", 6200, 6.40, 0.21),
-        ("006208", "2330", "台積電", 1900, 2.00, 0.08),
-        ("00878", "2330", "台積電", 2600, 2.70, 0.09),
-        ("00919", "2330", "台積電", 2100, 2.20, 0.07),
-        ("00713", "2330", "台積電", 1650, 1.70, 0.06),
-        ("00929", "2330", "台積電", 1300, 1.30, 0.05),
-        ("00915", "2330", "台積電", 1100, 1.10, 0.04),
-        ("00922", "2330", "台積電", 820, 0.80, 0.03),
-        ("00923", "2330", "台積電", 580, 0.50, 0.02),
-        ("0050", "2317", "鴻海", 5200, 3.50, 0.18),
-        ("006208", "2317", "鴻海", 3100, 2.10, 0.11),
-        ("00929", "2317", "鴻海", 2400, 1.60, 0.08),
-        ("00922", "2317", "鴻海", 1900, 1.30, 0.06),
-        ("00878", "2317", "鴻海", 1300, 0.90, 0.04),
-        ("00919", "2317", "鴻海", 900, 0.60, 0.03),
-        ("00713", "2317", "鴻海", 410, 0.30, 0.01),
-        ("0050", "2454", "聯發科", 1200, 2.60, 0.14),
-        ("006208", "2454", "聯發科", 880, 1.90, 0.10),
-        ("00922", "2454", "聯發科", 520, 1.10, 0.06),
-        ("00929", "2454", "聯發科", 410, 0.90, 0.05),
-        ("00923", "2454", "聯發科", 200, 0.40, 0.03),
-        ("00878", "2881", "富邦金", 2800, 1.70, 0.08),
-        ("00919", "2881", "富邦金", 2400, 1.50, 0.07),
-        ("00713", "2881", "富邦金", 1500, 0.90, 0.04),
-        ("00915", "2881", "富邦金", 1100, 0.70, 0.03),
-        ("0050", "2881", "富邦金", 650, 0.40, 0.02),
-        ("006208", "2881", "富邦金", 400, 0.20, 0.01),
-        ("00878", "2891", "中信金", 5200, 1.80, 0.07),
-        ("00919", "2891", "中信金", 4300, 1.50, 0.06),
-        ("0056", "2891", "中信金", 3500, 1.20, 0.05),
-        ("00713", "2891", "中信金", 2400, 0.80, 0.03),
-        ("00915", "2891", "中信金", 1620, 0.50, 0.01),
-        ("0050", "2308", "台達電", 1800, 2.00, 0.08),
-        ("006208", "2308", "台達電", 1100, 1.20, 0.05),
-        ("00929", "2308", "台達電", 760, 0.90, 0.04),
-        ("00922", "2308", "台達電", 510, 0.60, 0.02),
-        ("00919", "2603", "長榮", -4200, -2.70, -0.13),
-        ("00878", "2603", "長榮", -3000, -2.00, -0.09),
-        ("00713", "2603", "長榮", -2100, -1.40, -0.06),
-        ("00915", "2603", "長榮", -1500, -1.00, -0.05),
-        ("0056", "2603", "長榮", -800, -0.50, -0.02),
-        ("00929", "2382", "廣達", -2300, -2.60, -0.12),
-        ("00922", "2382", "廣達", -1700, -1.90, -0.09),
-        ("0050", "2382", "廣達", -1200, -1.30, -0.06),
-        ("006208", "2382", "廣達", -890, -1.00, -0.04),
-        ("00929", "3037", "欣興", -1900, -1.40, -0.08),
-        ("00922", "3037", "欣興", -1500, -1.10, -0.06),
-        ("00923", "3037", "欣興", -900, -0.60, -0.04),
-        ("0050", "3711", "日月光投控", 2600, 1.40, 0.06),
-        ("006208", "3711", "日月光投控", 1800, 1.00, 0.04),
-        ("00929", "3711", "日月光投控", 980, 0.60, 0.03),
-    ]
-
-    etf_name_by_code = {x.etf_code: x.etf_name for x in etf_master}
-    return [
-        ETFStockDiff(
-            etf_code=etf_code,
-            etf_name=etf_name_by_code.get(etf_code, ""),
-            stock_code=stock_code,
-            stock_name=stock_name,
-            delta_lot=float(delta_lot),
-            delta_value_yi=float(delta_value_yi),
-            weight_delta_pct=float(weight_delta_pct),
-        )
-        for etf_code, stock_code, stock_name, delta_lot, delta_value_yi, weight_delta_pct in raw
+        {
+            "etf_code": "0050",
+            "etf_name": "元大台灣50",
+            "issuer": "元大投信",
+            "market": "TWSE",
+            "aum_yi": 4050.3,
+            "close": 185.2,
+            "top10_weight_pct": 72.8,
+        },
+        {
+            "etf_code": "006208",
+            "etf_name": "富邦台50",
+            "issuer": "富邦投信",
+            "market": "TWSE",
+            "aum_yi": 1850.2,
+            "close": 112.5,
+            "top10_weight_pct": 71.4,
+        },
+        {
+            "etf_code": "00878",
+            "etf_name": "國泰永續高股息",
+            "issuer": "國泰投信",
+            "market": "TWSE",
+            "aum_yi": 3210.8,
+            "close": 23.1,
+            "top10_weight_pct": 46.1,
+        },
+        {
+            "etf_code": "00919",
+            "etf_name": "群益台灣精選高息",
+            "issuer": "群益投信",
+            "market": "TWSE",
+            "aum_yi": 2789.0,
+            "close": 24.3,
+            "top10_weight_pct": 42.7,
+        },
+        {
+            "etf_code": "00929",
+            "etf_name": "復華台灣科技優息",
+            "issuer": "復華投信",
+            "market": "TWSE",
+            "aum_yi": 1640.6,
+            "close": 19.8,
+            "top10_weight_pct": 52.2,
+        },
     ]
 
 
 # ============================================================
-# Data quality and readiness
+# Raw holdings snapshot layer
 # ============================================================
-def calculate_coverage(etf_master: List[ETFMaster], etf_stock_diffs: List[ETFStockDiff]) -> Dict[str, Any]:
-    total_etfs = len({x.etf_code for x in etf_master})
-    covered_etfs = len({x.etf_code for x in etf_stock_diffs})
-    coverage_ratio = covered_etfs / total_etfs if total_etfs else 0.0
+def holdings_folder(trade_date: str) -> Path:
+    return RAW_HOLDINGS_DIR / trade_date
+
+
+def holdings_path(trade_date: str, etf_code: str) -> Path:
+    return holdings_folder(trade_date) / f"{etf_code}.json"
+
+
+def save_etf_holdings_snapshot(trade_date: str, etf_code: str, payload: Dict[str, Any]) -> None:
+    """
+    Save one ETF holdings snapshot:
+        raw/holdings/YYYY-MM-DD/{etf_code}.json
+    """
+    path = holdings_path(trade_date, etf_code)
+    atomic_write_json(path, payload)
+
+
+def load_holdings_snapshot(trade_date: str) -> Dict[str, Dict[str, Any]]:
+    """
+    Load all ETF holdings snapshots for one date.
+
+    Return:
+      {
+        "0050": { snapshot payload },
+        "00878": { snapshot payload },
+        ...
+      }
+    """
+    folder = holdings_folder(trade_date)
+    if not folder.exists():
+        logger.warning("Holdings folder does not exist: %s", folder)
+        return {}
+
+    output: Dict[str, Dict[str, Any]] = {}
+    for path in sorted(folder.glob("*.json")):
+        try:
+            payload = read_json(path)
+            etf_code = str(payload.get("etf_code", path.stem))
+            output[etf_code] = payload
+        except Exception as exc:
+            logger.warning("Failed to read %s: %s", path, exc)
+
+    return output
+
+
+def get_previous_available_holding_date(report_date: str, max_lookback_days: int = 10) -> Optional[str]:
+    """
+    Find latest prior raw/holdings/YYYY-MM-DD folder with JSON files.
+    This is better than simply using yesterday because of weekends/holidays.
+    """
+    current = datetime.strptime(report_date, "%Y-%m-%d").date()
+
+    for i in range(1, max_lookback_days + 1):
+        candidate = to_date_str(current - timedelta(days=i))
+        folder = holdings_folder(candidate)
+        if folder.exists() and any(folder.glob("*.json")):
+            return candidate
+
+    return None
+
+
+# ============================================================
+# Sample holdings generator
+# ============================================================
+def make_holding(
+    stock_code: str,
+    stock_name: str,
+    shares: int,
+    close: float,
+    weight_pct: float,
+) -> Dict[str, Any]:
     return {
-        "total_etfs": total_etfs,
-        "covered_etfs": covered_etfs,
-        "coverage_ratio": round(coverage_ratio, 4),
-        "min_required_coverage_ratio": MIN_COVERAGE_RATIO,
-        "is_ready": coverage_ratio >= MIN_COVERAGE_RATIO,
-        "allow_partial_report": ALLOW_PARTIAL_REPORT,
+        "stock_code": stock_code,
+        "stock_name": stock_name,
+        "shares": int(shares),
+        "weight_pct": round(float(weight_pct), 4),
+        "close": round(float(close), 2),
+        "market_value": round(int(shares) * float(close), 2),
     }
 
 
-def should_generate_report(quality: Dict[str, Any]) -> bool:
-    if quality["is_ready"]:
-        return True
-    if ALLOW_PARTIAL_REPORT:
-        logger.warning("Coverage below threshold, but ALLOW_PARTIAL_REPORT=1. Continue.")
-        return True
-    logger.warning(
-        "Data not ready. Coverage %.2f%% < %.2f%%. Skip report generation.",
-        quality["coverage_ratio"] * 100,
-        MIN_COVERAGE_RATIO * 100,
-    )
-    return False
+def build_sample_holdings_for_date(
+    trade_date: str,
+    etf: Dict[str, Any],
+    day_type: str,
+) -> Dict[str, Any]:
+    """
+    Create sample ETF holdings.
+    day_type:
+      - "yesterday"
+      - "today"
+
+    The difference between yesterday and today is intentional.
+    It allows calculate_etf_stock_diffs() to produce real diffs.
+    """
+    etf_code = etf["etf_code"]
+
+    # Base holdings by ETF.
+    base: Dict[str, List[Dict[str, Any]]] = {
+        "0050": [
+            make_holding("2330", "台積電", 900_000, 950, 45.2),
+            make_holding("2317", "鴻海", 500_000, 170, 4.8),
+            make_holding("2454", "聯發科", 120_000, 1180, 5.6),
+            make_holding("2382", "廣達", 180_000, 260, 2.4),
+            make_holding("2881", "富邦金", 300_000, 78, 1.3),
+        ],
+        "006208": [
+            make_holding("2330", "台積電", 420_000, 950, 46.1),
+            make_holding("2317", "鴻海", 260_000, 170, 4.6),
+            make_holding("2454", "聯發科", 80_000, 1180, 5.2),
+            make_holding("2382", "廣達", 90_000, 260, 2.0),
+            make_holding("2881", "富邦金", 160_000, 78, 1.2),
+        ],
+        "00878": [
+            make_holding("2330", "台積電", 260_000, 950, 8.1),
+            make_holding("2891", "中信金", 600_000, 38, 4.3),
+            make_holding("2881", "富邦金", 480_000, 78, 5.2),
+            make_holding("2603", "長榮", 350_000, 170, 4.8),
+            make_holding("2317", "鴻海", 220_000, 170, 3.1),
+        ],
+        "00919": [
+            make_holding("2330", "台積電", 200_000, 950, 7.2),
+            make_holding("2891", "中信金", 520_000, 38, 4.0),
+            make_holding("2881", "富邦金", 430_000, 78, 5.0),
+            make_holding("2603", "長榮", 420_000, 170, 5.2),
+            make_holding("2317", "鴻海", 150_000, 170, 2.4),
+        ],
+        "00929": [
+            make_holding("2330", "台積電", 160_000, 950, 12.5),
+            make_holding("2317", "鴻海", 240_000, 170, 5.1),
+            make_holding("2454", "聯發科", 55_000, 1180, 4.8),
+            make_holding("2382", "廣達", 260_000, 260, 5.6),
+            make_holding("3037", "欣興", 180_000, 185, 3.2),
+        ],
+    }
+
+    rows = [dict(x) for x in base.get(etf_code, [])]
+
+    if day_type == "today":
+        # Apply deterministic changes by ETF.
+        # Positive = ETF adds holdings; negative = ETF cuts holdings.
+        adjustments: Dict[str, Dict[str, int]] = {
+            "0050": {
+                "2330": 6_200_000,
+                "2317": 5_200_000,
+                "2454": 1_200_000,
+                "2382": -1_200_000,
+                "2881": 650_000,
+                "3711": 2_600_000,  # new position
+            },
+            "006208": {
+                "2330": 1_900_000,
+                "2317": 3_100_000,
+                "2454": 880_000,
+                "2382": -890_000,
+                "2881": 400_000,
+                "3711": 1_800_000,
+            },
+            "00878": {
+                "2330": 2_600_000,
+                "2317": 1_300_000,
+                "2891": 5_200_000,
+                "2881": 2_800_000,
+                "2603": -3_000_000,
+            },
+            "00919": {
+                "2330": 2_100_000,
+                "2317": 900_000,
+                "2891": 4_300_000,
+                "2881": 2_400_000,
+                "2603": -4_200_000,
+            },
+            "00929": {
+                "2330": 1_300_000,
+                "2317": 2_400_000,
+                "2454": 410_000,
+                "2382": -2_300_000,
+                "3037": -1_900_000,
+                "3711": 980_000,
+            },
+        }
+
+        prices = {
+            "2330": ("台積電", 950),
+            "2317": ("鴻海", 170),
+            "2454": ("聯發科", 1180),
+            "2382": ("廣達", 260),
+            "2881": ("富邦金", 78),
+            "2891": ("中信金", 38),
+            "2603": ("長榮", 170),
+            "3037": ("欣興", 185),
+            "3711": ("日月光投控", 155),
+        }
+
+        row_map = {row["stock_code"]: row for row in rows}
+        for stock_code, delta_shares in adjustments.get(etf_code, {}).items():
+            stock_name, close = prices[stock_code]
+
+            if stock_code not in row_map:
+                row_map[stock_code] = make_holding(stock_code, stock_name, 0, close, 0.0)
+
+            row = row_map[stock_code]
+            row["shares"] = max(0, safe_int(row["shares"]) + delta_shares)
+            row["close"] = close
+            row["market_value"] = round(row["shares"] * close, 2)
+
+            # Simple sample weight movement.
+            row["weight_pct"] = round(safe_float(row.get("weight_pct")) + delta_shares / 1_000_000 * 0.01, 4)
+
+        rows = list(row_map.values())
+
+    return {
+        "trade_date": trade_date,
+        "etf_code": etf["etf_code"],
+        "etf_name": etf["etf_name"],
+        "issuer": etf.get("issuer", ""),
+        "market": etf.get("market", ""),
+        "source": "sample_holdings_snapshot",
+        "holdings": sorted(rows, key=lambda x: x["stock_code"]),
+    }
+
+
+def generate_sample_holdings_snapshots(
+    etf_master: List[Dict[str, Any]],
+    report_date: str,
+    previous_date: str,
+) -> None:
+    """
+    Generate both yesterday and today snapshots.
+    This lets you test the full formal pipeline before connecting crawlers.
+    """
+    logger.info("Generating sample holdings snapshots: %s and %s", previous_date, report_date)
+
+    for etf in etf_master:
+        yesterday_payload = build_sample_holdings_for_date(previous_date, etf, "yesterday")
+        today_payload = build_sample_holdings_for_date(report_date, etf, "today")
+
+        save_etf_holdings_snapshot(previous_date, etf["etf_code"], yesterday_payload)
+        save_etf_holdings_snapshot(report_date, etf["etf_code"], today_payload)
 
 
 # ============================================================
-# Business logic
+# Production placeholders
 # ============================================================
-def make_stock_signal(stock_name: str, direction: Direction, etf_count: int, value_yi: float) -> str:
+def fetch_today_all_etf_holdings(etf_master: List[Dict[str, Any]], report_date: str) -> Dict[str, Dict[str, Any]]:
+    """
+    Production version should:
+      1. Loop through all ETFs from TWSE + TPEx master.
+      2. Dispatch by issuer:
+           元大 -> fetch_yuanta_pcf()
+           富邦 -> fetch_fubon_pcf()
+           國泰 -> fetch_cathay_pcf()
+           群益 -> fetch_capital_pcf()
+           ...
+      3. Save each result into raw/holdings/YYYY-MM-DD/{etf_code}.json
+      4. Return loaded snapshots.
+
+    MVP version:
+      - If USE_SAMPLE_HOLDINGS=1, snapshots are already created by
+        generate_sample_holdings_snapshots().
+      - Then simply load raw/holdings/{report_date}.
+    """
+    if not USE_SAMPLE_HOLDINGS:
+        raise NotImplementedError(
+            "Real PCF crawlers are not implemented yet. "
+            "Keep USE_SAMPLE_HOLDINGS=1 until issuer crawlers are ready."
+        )
+
+    return load_holdings_snapshot(report_date)
+
+
+# ============================================================
+# Diff calculation
+# ============================================================
+def normalize_holding_row(row: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "stock_code": str(row.get("stock_code", "")).strip(),
+        "stock_name": str(row.get("stock_name", "")).strip(),
+        "shares": safe_float(row.get("shares", 0)),
+        "weight_pct": safe_float(row.get("weight_pct", 0)),
+        "close": safe_float(row.get("close", 0)),
+        "market_value": safe_float(row.get("market_value", 0)),
+    }
+
+
+def calculate_etf_stock_diffs(
+    today_holdings: Dict[str, Dict[str, Any]],
+    yesterday_holdings: Dict[str, Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """
+    Calculate ETF-level stock diffs.
+
+    Input:
+      today_holdings["0050"]["holdings"] = list of stock rows
+      yesterday_holdings["0050"]["holdings"] = list of stock rows
+
+    Output rows:
+      {
+        etf_code,
+        etf_name,
+        stock_code,
+        stock_name,
+        delta_shares,
+        delta_lot,
+        delta_value_yi,
+        weight_delta_pct,
+      }
+    """
+    diffs: List[Dict[str, Any]] = []
+
+    for etf_code, today_payload in sorted(today_holdings.items()):
+        yesterday_payload = yesterday_holdings.get(etf_code)
+        if not yesterday_payload:
+            logger.warning("No yesterday snapshot for ETF %s. Skip diff.", etf_code)
+            continue
+
+        etf_name = today_payload.get("etf_name") or yesterday_payload.get("etf_name") or ""
+        today_rows = [normalize_holding_row(x) for x in today_payload.get("holdings", [])]
+        yesterday_rows = [normalize_holding_row(x) for x in yesterday_payload.get("holdings", [])]
+
+        today_map = {row["stock_code"]: row for row in today_rows if row["stock_code"]}
+        yesterday_map = {row["stock_code"]: row for row in yesterday_rows if row["stock_code"]}
+
+        all_stock_codes = sorted(set(today_map) | set(yesterday_map))
+
+        for stock_code in all_stock_codes:
+            today_row = today_map.get(stock_code, {})
+            yesterday_row = yesterday_map.get(stock_code, {})
+
+            stock_name = (
+                today_row.get("stock_name")
+                or yesterday_row.get("stock_name")
+                or ""
+            )
+
+            today_shares = safe_float(today_row.get("shares", 0))
+            yesterday_shares = safe_float(yesterday_row.get("shares", 0))
+            delta_shares = today_shares - yesterday_shares
+
+            if abs(delta_shares) < 1:
+                continue
+
+            price = (
+                safe_float(today_row.get("close", 0))
+                or safe_float(yesterday_row.get("close", 0))
+            )
+
+            today_weight = safe_float(today_row.get("weight_pct", 0))
+            yesterday_weight = safe_float(yesterday_row.get("weight_pct", 0))
+            weight_delta_pct = today_weight - yesterday_weight
+
+            diffs.append(
+                {
+                    "etf_code": etf_code,
+                    "etf_name": etf_name,
+                    "stock_code": stock_code,
+                    "stock_name": stock_name,
+                    "delta_shares": round(delta_shares, 0),
+                    "delta_lot": round(delta_shares / 1000, 1),
+                    "delta_value_yi": round(delta_shares * price / 100_000_000, 4),
+                    "weight_delta_pct": round(weight_delta_pct, 4),
+                }
+            )
+
+    return diffs
+
+
+# ============================================================
+# Aggregation and report sections
+# ============================================================
+def make_stock_signal(stock_name: str, direction: str, etf_count: int, value_yi: float) -> str:
     abs_value = abs(value_yi)
+
     if direction == "buy" and etf_count >= 5:
         return f"{stock_name} 被 {etf_count} 檔 ETF 同步加碼，估算買盤 {abs_value:.2f} 億元，屬於高共識買盤。"
     if direction == "buy" and etf_count >= 2:
@@ -300,107 +586,152 @@ def make_stock_signal(stock_name: str, direction: Direction, etf_count: int, val
         return f"{stock_name} 遭 {etf_count} 檔 ETF 同步減碼，估算賣壓 {abs_value:.2f} 億元，短線籌碼偏弱。"
     if direction == "sell" and etf_count >= 2:
         return f"{stock_name} 遭 {etf_count} 檔 ETF 減碼，估算賣壓 {abs_value:.2f} 億元，需觀察是否擴散。"
+
     return f"{stock_name} 今日 ETF 籌碼變化有限，暫列觀察。"
 
 
-def aggregate_stock_changes(etf_stock_diffs: List[ETFStockDiff], top_n: int = TOP_N_STOCKS) -> List[Dict[str, Any]]:
-    grouped: Dict[str, List[ETFStockDiff]] = defaultdict(list)
+def aggregate_stock_changes(etf_stock_diffs: List[Dict[str, Any]], top_n: Optional[int] = None) -> List[Dict[str, Any]]:
+    grouped: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+
     for row in etf_stock_diffs:
-        if abs(row.delta_value_yi) < 1e-9 and abs(row.delta_lot) < 1e-9:
-            continue
-        grouped[row.stock_code].append(row)
+        grouped[row["stock_code"]].append(row)
 
     output: List[Dict[str, Any]] = []
+
     for stock_code, rows in grouped.items():
-        stock_name = rows[0].stock_name
-        total_lot = sum(x.delta_lot for x in rows)
-        total_value_yi = sum(x.delta_value_yi for x in rows)
-        total_weight_delta = sum(x.weight_delta_pct for x in rows)
-        direction = decide_direction(total_value_yi)
+        stock_name = rows[0]["stock_name"]
+
+        total_lot = sum(safe_float(x["delta_lot"]) for x in rows)
+        total_value_yi = sum(safe_float(x["delta_value_yi"]) for x in rows)
+        total_weight_delta = sum(safe_float(x["weight_delta_pct"]) for x in rows)
+
+        direction = direction_from_value(total_value_yi)
 
         participants = []
-        for x in sorted(rows, key=lambda r: abs(r.delta_value_yi), reverse=True):
-            participant_direction = decide_direction(x.delta_value_yi)
+        for x in sorted(rows, key=lambda r: abs(safe_float(r["delta_value_yi"])), reverse=True):
+            delta_value_yi = safe_float(x["delta_value_yi"])
+            participant_direction = direction_from_value(delta_value_yi)
+
             if participant_direction == "neutral":
                 continue
+
             participants.append(
                 {
-                    "etf_code": x.etf_code,
-                    "etf_name": x.etf_name,
+                    "etf_code": x["etf_code"],
+                    "etf_name": x["etf_name"],
                     "direction": participant_direction,
-                    "delta_lot": round_lot(x.delta_lot),
-                    "delta_value_yi": round_money(x.delta_value_yi),
-                    "weight_delta_pct": round_money(x.weight_delta_pct, 3),
+                    "delta_lot": round(safe_float(x["delta_lot"]), 1),
+                    "delta_value_yi": round(delta_value_yi, 4),
+                    "weight_delta_pct": round(safe_float(x["weight_delta_pct"]), 4),
                 }
             )
 
-        etf_count = len(participants)
         output.append(
             {
                 "stock_code": stock_code,
                 "stock_name": stock_name,
                 "direction": direction,
-                "delta_lot": round_lot(total_lot),
-                "delta_value_yi": round_money(total_value_yi),
-                "etf_count": etf_count,
-                "weight_delta_pct": round_money(total_weight_delta, 3),
-                "signal": make_stock_signal(stock_name, direction, etf_count, total_value_yi),
+                "delta_lot": round(total_lot, 1),
+                "delta_value_yi": round(total_value_yi, 2),
+                "etf_count": len(participants),
+                "weight_delta_pct": round(total_weight_delta, 4),
+                "signal": make_stock_signal(stock_name, direction, len(participants), total_value_yi),
                 "participating_etfs": participants,
             }
         )
 
     output.sort(key=lambda x: abs(safe_float(x["delta_value_yi"])), reverse=True)
-    return output[:top_n]
+
+    if top_n is not None:
+        return output[:top_n]
+    return output
 
 
-def build_etf_rankings(etf_master: List[ETFMaster], etf_stock_diffs: List[ETFStockDiff]) -> List[Dict[str, Any]]:
-    diffs_by_etf: Dict[str, List[ETFStockDiff]] = defaultdict(list)
+def build_etf_rankings(
+    etf_master: List[Dict[str, Any]],
+    etf_stock_diffs: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    diffs_by_etf: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in etf_stock_diffs:
-        diffs_by_etf[row.etf_code].append(row)
+        diffs_by_etf[row["etf_code"]].append(row)
 
-    rankings: List[Dict[str, Any]] = []
+    output: List[Dict[str, Any]] = []
+
     for etf in etf_master:
-        rows = diffs_by_etf.get(etf.etf_code, [])
-        buy_value_yi = sum(max(0.0, x.delta_value_yi) for x in rows)
-        sell_value_yi = abs(sum(min(0.0, x.delta_value_yi) for x in rows))
+        etf_code = etf["etf_code"]
+        rows = diffs_by_etf.get(etf_code, [])
+
+        buy_value_yi = sum(max(0.0, safe_float(x["delta_value_yi"])) for x in rows)
+        sell_value_yi = abs(sum(min(0.0, safe_float(x["delta_value_yi"])) for x in rows))
         net_flow_yi = buy_value_yi - sell_value_yi
-        turnover_pct = etf.turnover_pct
-        if etf.aum_yi > 0:
-            turnover_pct = max(turnover_pct, (buy_value_yi + sell_value_yi) / etf.aum_yi * 100)
-        rankings.append(
+
+        aum_yi = safe_float(etf.get("aum_yi"))
+        turnover_pct = (buy_value_yi + sell_value_yi) / aum_yi * 100 if aum_yi > 0 else 0.0
+
+        output.append(
             {
-                "etf_code": etf.etf_code,
-                "etf_name": etf.etf_name,
-                "aum_yi": round_money(etf.aum_yi, 1),
-                "buy_value_yi": round_money(buy_value_yi, 2),
-                "sell_value_yi": round_money(sell_value_yi, 2),
-                "net_flow_yi": round_money(net_flow_yi, 2),
-                "turnover_pct": round_money(turnover_pct, 2),
-                "top10_weight_pct": round_money(etf.top10_weight_pct, 1),
+                "etf_code": etf_code,
+                "etf_name": etf.get("etf_name", ""),
+                "aum_yi": round(aum_yi, 1),
+                "buy_value_yi": round(buy_value_yi, 2),
+                "sell_value_yi": round(sell_value_yi, 2),
+                "net_flow_yi": round(net_flow_yi, 2),
+                "turnover_pct": round(turnover_pct, 2),
+                "top10_weight_pct": round(safe_float(etf.get("top10_weight_pct")), 1),
             }
         )
-    rankings.sort(key=lambda x: abs(safe_float(x["buy_value_yi"]) + safe_float(x["sell_value_yi"])), reverse=True)
-    return rankings
+
+    output.sort(
+        key=lambda x: abs(safe_float(x["buy_value_yi"]) + safe_float(x["sell_value_yi"])),
+        reverse=True,
+    )
+    return output
+
+
+def build_kpis(all_stock_changes: List[Dict[str, Any]], top_stock_changes: List[Dict[str, Any]]) -> Dict[str, Any]:
+    net = sum(safe_float(x["delta_value_yi"]) for x in all_stock_changes)
+
+    consensus_buy = sum(
+        1 for x in all_stock_changes
+        if safe_float(x["delta_value_yi"]) > 0 and safe_int(x.get("etf_count")) >= 2
+    )
+    consensus_sell = sum(
+        1 for x in all_stock_changes
+        if safe_float(x["delta_value_yi"]) < 0 and safe_int(x.get("etf_count")) >= 2
+    )
+
+    total_abs = sum(abs(safe_float(x["delta_value_yi"])) for x in all_stock_changes) or 1.0
+    top3_abs = sum(abs(safe_float(x["delta_value_yi"])) for x in top_stock_changes[:3])
+    concentration_score = round(top3_abs / total_abs * 100)
+
+    return {
+        "net_change_value_yi": round(net, 1),
+        "consensus_buy_count": consensus_buy,
+        "consensus_sell_count": consensus_sell,
+        "concentration_score": concentration_score,
+    }
 
 
 def build_stock_radar(top_stock_changes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    rows: List[Dict[str, Any]] = []
+    output: List[Dict[str, Any]] = []
+
     for item in top_stock_changes:
         participants = item.get("participating_etfs", [])
         buy_etfs = sum(1 for x in participants if x.get("direction") == "buy")
         sell_etfs = sum(1 for x in participants if x.get("direction") == "sell")
-        direction = item.get("direction", "neutral")
-        if direction == "buy" and buy_etfs >= 5:
+
+        if item["direction"] == "buy" and buy_etfs >= 5:
             event_type = "高共識加碼"
-        elif direction == "buy":
+        elif item["direction"] == "buy":
             event_type = "共識加碼"
-        elif direction == "sell" and sell_etfs >= 4:
+        elif item["direction"] == "sell" and sell_etfs >= 4:
             event_type = "高共識減碼"
-        elif direction == "sell":
+        elif item["direction"] == "sell":
             event_type = "共識減碼"
         else:
             event_type = "觀察"
-        rows.append(
+
+        output.append(
             {
                 "stock_code": item["stock_code"],
                 "stock_name": item["stock_name"],
@@ -409,108 +740,218 @@ def build_stock_radar(top_stock_changes: List[Dict[str, Any]]) -> List[Dict[str,
                 "net_value_yi": item["delta_value_yi"],
                 "streak_days": 1,
                 "event_type": event_type,
-                "note": item.get("signal", ""),
+                "note": item["signal"],
             }
         )
-    return rows[:10]
+
+    return output
 
 
-def build_kpis(top_stock_changes: List[Dict[str, Any]], all_stock_changes: List[Dict[str, Any]]) -> Dict[str, Any]:
-    net = sum(safe_float(x["delta_value_yi"]) for x in all_stock_changes)
-    consensus_buy = sum(1 for x in all_stock_changes if safe_float(x["delta_value_yi"]) > 0 and int(x.get("etf_count", 0)) >= 2)
-    consensus_sell = sum(1 for x in all_stock_changes if safe_float(x["delta_value_yi"]) < 0 and int(x.get("etf_count", 0)) >= 2)
-    total_abs = sum(abs(safe_float(x["delta_value_yi"])) for x in all_stock_changes) or 1.0
-    top3_abs = sum(abs(safe_float(x["delta_value_yi"])) for x in top_stock_changes[:3])
-    concentration_score = round(top3_abs / total_abs * 100)
-    return {
-        "net_change_value_yi": round_money(net, 1),
-        "consensus_buy_count": consensus_buy,
-        "consensus_sell_count": consensus_sell,
-        "concentration_score": concentration_score,
-    }
+def build_events(top_stock_changes: List[Dict[str, Any]], quality: Dict[str, Any]) -> List[Dict[str, Any]]:
+    events: List[Dict[str, Any]] = []
 
-
-def build_events(top_stock_changes: List[Dict[str, Any]], quality: Dict[str, Any]) -> List[Dict[str, str]]:
-    events: List[Dict[str, str]] = []
     buys = [x for x in top_stock_changes if safe_float(x["delta_value_yi"]) > 0]
     sells = [x for x in top_stock_changes if safe_float(x["delta_value_yi"]) < 0]
+
     if buys:
         top = buys[0]
-        events.append({"time": "盤後", "title": f"{top['stock_name']} 成為今日 ETF 最大共識買盤", "desc": f"估算加碼 {top['delta_value_yi']} 億元，參與 ETF {top['etf_count']} 檔。"})
+        events.append(
+            {
+                "time": "盤後",
+                "title": f"{top['stock_name']} 成為今日 ETF 最大共識買盤",
+                "desc": f"估算加碼 {top['delta_value_yi']} 億元，參與 ETF {top['etf_count']} 檔。",
+            }
+        )
+
     if sells:
         top = sorted(sells, key=lambda x: safe_float(x["delta_value_yi"]))[0]
-        events.append({"time": "盤後", "title": f"{top['stock_name']} 出現 ETF 共識減碼", "desc": f"估算減碼 {abs(safe_float(top['delta_value_yi'])):.2f} 億元，參與 ETF {top['etf_count']} 檔。"})
-    events.append({"time": "資料檢查", "title": "全市場 ETF 資料覆蓋率", "desc": f"已覆蓋 {quality['covered_etfs']}/{quality['total_etfs']} 檔 ETF，覆蓋率 {quality['coverage_ratio']:.1%}。"})
+        events.append(
+            {
+                "time": "盤後",
+                "title": f"{top['stock_name']} 出現 ETF 共識減碼",
+                "desc": f"估算減碼 {abs(safe_float(top['delta_value_yi'])):.2f} 億元，參與 ETF {top['etf_count']} 檔。",
+            }
+        )
+
+    events.append(
+        {
+            "time": "資料檢查",
+            "title": "ETF 持股快照覆蓋率",
+            "desc": (
+                f"今日已覆蓋 {quality['covered_etfs']}/{quality['tracked_etfs']} 檔 ETF，"
+                f"覆蓋率 {quality['coverage_ratio']:.1%}。"
+            ),
+        }
+    )
+
     return events
 
 
-def build_ai_report(top_stock_changes: List[Dict[str, Any]], kpis: Dict[str, Any], quality: Dict[str, Any]) -> Dict[str, Any]:
+def build_ai_report(
+    top_stock_changes: List[Dict[str, Any]],
+    kpis: Dict[str, Any],
+    quality: Dict[str, Any],
+) -> Dict[str, Any]:
+    net = safe_float(kpis["net_change_value_yi"])
+    bias = "偏多" if net > 0 else "偏空" if net < 0 else "中性"
+
     buys = [x for x in top_stock_changes if safe_float(x["delta_value_yi"]) > 0]
     sells = [x for x in top_stock_changes if safe_float(x["delta_value_yi"]) < 0]
-    top_buy = buys[0] if buys else None
-    top_sell = sorted(sells, key=lambda x: safe_float(x["delta_value_yi"]))[0] if sells else None
-    net_value = safe_float(kpis["net_change_value_yi"])
-    bias = "偏多" if net_value > 0 else "偏空" if net_value < 0 else "中性"
-    headline = f"今日全市場 ETF 籌碼{bias}，前十大變動淨額 {net_value:.1f} 億元。"
+
+    headline = f"今日全市場 ETF 籌碼{bias}，前十大變動淨額 {net:.1f} 億元。"
+
     summary_parts = [
-        f"今日以 TWSE + TPEx 全部 ETF 為分析範圍，資料覆蓋率為 {quality['coverage_ratio']:.1%}。",
-        f"跨 ETF 持股差分顯示，整體籌碼方向為{bias}，共識加碼股票 {kpis['consensus_buy_count']} 檔，共識減碼股票 {kpis['consensus_sell_count']} 檔。",
-        f"前三大變動占全體變動絕對值的 {kpis['concentration_score']}%，可用來判斷今日資金是否過度集中。",
+        f"本報告以 TWSE + TPEx 全部 ETF 為分析範圍，今日持股快照覆蓋率為 {quality['coverage_ratio']:.1%}。",
+        f"跨 ETF 持股差分顯示，共識加碼股票 {kpis['consensus_buy_count']} 檔，共識減碼股票 {kpis['consensus_sell_count']} 檔。",
+        f"前三大變動占整體變動絕對值 {kpis['concentration_score']}%，可用來衡量今日 ETF 資金是否集中於少數權值股。",
     ]
-    if top_buy:
-        summary_parts.append(f"最大買盤為 {top_buy['stock_code']} {top_buy['stock_name']}，估算加碼 {top_buy['delta_value_yi']} 億元，參與 ETF {top_buy['etf_count']} 檔。")
-    if top_sell:
-        summary_parts.append(f"最大賣壓為 {top_sell['stock_code']} {top_sell['stock_name']}，估算減碼 {abs(safe_float(top_sell['delta_value_yi'])):.2f} 億元，參與 ETF {top_sell['etf_count']} 檔。")
-    watchlist = [
-        f"{x['stock_code']} {x['stock_name']}：ETF {'加碼' if safe_float(x['delta_value_yi']) > 0 else '減碼'} {abs(safe_float(x['delta_value_yi'])):.2f} 億，參與 ETF {x['etf_count']} 檔"
-        for x in top_stock_changes[:5]
-    ]
-    risk = "若資料覆蓋率未達 100%，應避免將單次報告視為完整市場結論；若買盤集中在少數權值股，也需觀察隔日是否延續。"
-    return {"headline": headline, "summary": "".join(summary_parts), "watchlist": watchlist, "risk": risk}
+
+    if buys:
+        top = buys[0]
+        summary_parts.append(
+            f"最大買盤為 {top['stock_code']} {top['stock_name']}，估算加碼 {top['delta_value_yi']} 億元，參與 ETF {top['etf_count']} 檔。"
+        )
+
+    if sells:
+        top = sorted(sells, key=lambda x: safe_float(x["delta_value_yi"]))[0]
+        summary_parts.append(
+            f"最大賣壓為 {top['stock_code']} {top['stock_name']}，估算減碼 {abs(safe_float(top['delta_value_yi'])):.2f} 億元，參與 ETF {top['etf_count']} 檔。"
+        )
+
+    watchlist = []
+    for x in top_stock_changes[:5]:
+        direction = "加碼" if safe_float(x["delta_value_yi"]) > 0 else "減碼"
+        watchlist.append(
+            f"{x['stock_code']} {x['stock_name']}：ETF {direction} {abs(safe_float(x['delta_value_yi'])):.2f} 億，參與 ETF {x['etf_count']} 檔"
+        )
+
+    risk = (
+        "此版本使用 sample holdings snapshot 驗證資料流程；正式上線後，需確認 TWSE / TPEx / 投信 PCF 資料完整性。"
+        "若覆蓋率未達 100%，請避免將報告視為完整市場結論。"
+    )
+
+    return {
+        "headline": headline,
+        "summary": "".join(summary_parts),
+        "watchlist": watchlist,
+        "risk": risk,
+    }
 
 
 def build_data_sources() -> List[Dict[str, Any]]:
-    status = "ready" if not USE_SAMPLE_DATA else "watch"
     return [
-        {"name": "TWSE ETF e添富", "type": "ETF master / AUM / ranking", "update_freq": "每日或盤中依官方更新", "status": status, "fields": ["etf_code", "etf_name", "aum", "close", "issuer", "beneficiaries"]},
-        {"name": "TWSE / TPEx ETF 交易資料", "type": "成交價量 / 折溢價輔助", "update_freq": "交易日", "status": status, "fields": ["close", "volume", "turnover", "premium_discount"]},
-        {"name": "SITCA ETF 專區", "type": "產業統計 / 明細資料入口", "update_freq": "月 / 季 / 不定期", "status": "manual", "fields": ["fund_type", "issuer", "monthly_top5", "quarter_holdings"]},
-        {"name": "MOPS 公開資訊觀測站", "type": "公開說明書 / 財報 / 基金資訊", "update_freq": "依公告", "status": "manual", "fields": ["prospectus", "financial_report", "fund_nav", "holdings"]},
-        {"name": "集保 ETF 觀測站", "type": "預估淨值 / 折溢價 / 成分證券資訊", "update_freq": "盤中 / 每日", "status": "watch", "fields": ["iNAV", "premium_discount", "constituents"]},
-        {"name": "各投信 PCF / 每日持股揭露", "type": "每日持股核心資料", "update_freq": "每日盤前或盤後", "status": "watch", "fields": ["stock_code", "shares", "weight", "cash_component", "creation_unit"]},
+        {
+            "name": "TWSE ETF e添富",
+            "type": "ETF master / AUM / ranking",
+            "update_freq": "每日或盤中依官方更新",
+            "status": "watch",
+            "fields": ["etf_code", "etf_name", "aum", "close", "issuer", "beneficiaries"],
+        },
+        {
+            "name": "TWSE / TPEx ETF 交易資料",
+            "type": "成交價量 / 折溢價輔助",
+            "update_freq": "交易日",
+            "status": "watch",
+            "fields": ["close", "volume", "turnover", "premium_discount"],
+        },
+        {
+            "name": "各投信 PCF / 每日持股揭露",
+            "type": "每日持股核心資料",
+            "update_freq": "每日盤前或盤後",
+            "status": "watch",
+            "fields": ["stock_code", "shares", "weight", "cash_component", "creation_unit"],
+        },
+        {
+            "name": "raw/holdings snapshot",
+            "type": "本系統標準化後持股快照",
+            "update_freq": "每日",
+            "status": "ready",
+            "fields": ["trade_date", "etf_code", "stock_code", "shares", "weight_pct", "close"],
+        },
     ]
 
 
+def calculate_snapshot_quality(
+    etf_master: List[Dict[str, Any]],
+    today_holdings: Dict[str, Dict[str, Any]],
+) -> Dict[str, Any]:
+    tracked = len(etf_master)
+    covered = len(today_holdings)
+    coverage = covered / tracked if tracked else 0.0
+
+    return {
+        "tracked_etfs": tracked,
+        "covered_etfs": covered,
+        "coverage_ratio": round(coverage, 4),
+        "min_required_coverage_ratio": MIN_COVERAGE_RATIO,
+        "is_ready": coverage >= MIN_COVERAGE_RATIO,
+        "allow_partial_report": ALLOW_PARTIAL_REPORT,
+    }
+
+
+# ============================================================
+# Report generation
+# ============================================================
 def build_report() -> Optional[Dict[str, Any]]:
     now = now_taipei()
-    report_date = now.strftime("%Y-%m-%d")
-    updated_at = now.strftime("%Y-%m-%d %H:%M:%S")
+    report_date = to_date_str(now.date())
+    default_previous_date = to_date_str(previous_business_day(now.date()))
+
+    logger.info("Report date: %s", report_date)
+    logger.info("Default previous business date: %s", default_previous_date)
+
     etf_master = fetch_all_twse_tpex_etfs()
-    etf_stock_diffs = fetch_all_etf_stock_diffs(etf_master)
-    quality = calculate_coverage(etf_master, etf_stock_diffs)
-    logger.info("ETF coverage: %s/%s = %.2f%%", quality["covered_etfs"], quality["total_etfs"], quality["coverage_ratio"] * 100)
-    if not should_generate_report(quality):
+
+    if USE_SAMPLE_HOLDINGS:
+        generate_sample_holdings_snapshots(
+            etf_master=etf_master,
+            report_date=report_date,
+            previous_date=default_previous_date,
+        )
+
+    today_holdings = fetch_today_all_etf_holdings(etf_master, report_date)
+    previous_snapshot_date = get_previous_available_holding_date(report_date) or default_previous_date
+    yesterday_holdings = load_holdings_snapshot(previous_snapshot_date)
+
+    quality = calculate_snapshot_quality(etf_master, today_holdings)
+    logger.info(
+        "Snapshot coverage: %s/%s = %.1f%%",
+        quality["covered_etfs"],
+        quality["tracked_etfs"],
+        quality["coverage_ratio"] * 100,
+    )
+
+    if not quality["is_ready"] and not ALLOW_PARTIAL_REPORT:
+        logger.warning("Snapshot data is not ready. Skip output.")
         return None
-    all_stock_changes = aggregate_stock_changes(etf_stock_diffs, top_n=10_000)
+
+    etf_stock_diffs = calculate_etf_stock_diffs(today_holdings, yesterday_holdings)
+    logger.info("Calculated ETF-stock diff rows: %s", len(etf_stock_diffs))
+
+    all_stock_changes = aggregate_stock_changes(etf_stock_diffs, top_n=None)
     top_stock_changes = all_stock_changes[:TOP_N_STOCKS]
+
     etf_rankings = build_etf_rankings(etf_master, etf_stock_diffs)
-    kpis = build_kpis(top_stock_changes, all_stock_changes)
+    kpis = build_kpis(all_stock_changes, top_stock_changes)
     stock_radar = build_stock_radar(top_stock_changes)
     events = build_events(top_stock_changes, quality)
     ai_report = build_ai_report(top_stock_changes, kpis, quality)
-    net_value = safe_float(kpis["net_change_value_yi"])
-    market_bias = "偏多" if net_value > 0 else "偏空" if net_value < 0 else "中性"
+
+    net = safe_float(kpis["net_change_value_yi"])
+    market_bias = "偏多" if net > 0 else "偏空" if net < 0 else "中性"
+
     return {
         "meta": {
             "report_date": report_date,
-            "updated_at": updated_at,
+            "updated_at": now.strftime("%Y-%m-%d %H:%M:%S"),
             "timezone": "Asia/Taipei",
-            "tracked_etfs": len(etf_master),
+            "tracked_etfs": quality["tracked_etfs"],
             "covered_etfs": quality["covered_etfs"],
             "coverage_ratio": quality["coverage_ratio"],
             "universe": "TWSE + TPEx 全部 ETF",
             "market_bias": market_bias,
-            "sample_mode": USE_SAMPLE_DATA,
+            "snapshot_mode": "sample" if USE_SAMPLE_HOLDINGS else "production",
+            "previous_snapshot_date": previous_snapshot_date,
         },
         "data_quality": quality,
         "kpis": kpis,
@@ -525,29 +966,29 @@ def build_report() -> Optional[Dict[str, Any]]:
 
 def persist_report(report: Dict[str, Any]) -> None:
     report_date = report["meta"]["report_date"]
+
     latest_path = DATA_DIR / "latest_report.json"
     history_path = HISTORY_DIR / f"{report_date}.json"
+
     atomic_write_json(latest_path, report)
     atomic_write_json(history_path, report)
+
     logger.info("Generated %s", latest_path)
     logger.info("Generated %s", history_path)
 
 
 def main() -> int:
-    logger.info("Start Taiwan ETF report generation. USE_SAMPLE_DATA=%s", USE_SAMPLE_DATA)
     try:
         report = build_report()
         if report is None:
-            logger.info("Report generation skipped because data is not ready.")
+            logger.info("No report generated.")
             return 0
+
         persist_report(report)
-        logger.info("Report generation completed.")
         return 0
-    except NotImplementedError as exc:
-        logger.error("%s", exc)
-        return 2
+
     except Exception as exc:
-        logger.exception("Unexpected report generation failure: %s", exc)
+        logger.exception("Report generation failed: %s", exc)
         return 1
 
 
