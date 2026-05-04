@@ -23,10 +23,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      USE_SAMPLE_HOLDINGS: "1"
-      MIN_COVERAGE_RATIO: "0.85"
-      ALLOW_PARTIAL_REPORT: "1"
       TOP_N_STOCKS: "10"
+      MIN_HOLDINGS_COVERAGE_RATIO: "0.85"
+      ALLOW_MASTER_ONLY_REPORT: "1"
+      HTTP_TIMEOUT: "30"
+      HTTP_SLEEP_SECONDS: "0.25"
       LOG_LEVEL: "INFO"
 
     steps:
@@ -51,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest_report.json history/*.json raw/holdings/**/*.json
+          git add data/ history/ raw/ || true
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update daily ETF report"
           git push
