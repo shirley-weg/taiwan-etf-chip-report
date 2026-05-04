@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "report_date": "2026-05-04",
+    "updated_at": "2026-05-04 18:30:00",
+    "tracked_etfs": 0,
+    "universe": "Taiwan ETF",
+    "market_bias": "初始化"
+  },
+  "kpis": {
+    "net_change_value_yi": 0,
+    "consensus_buy_count": 0,
+    "consensus_sell_count": 0,
+    "concentration_score": 0
+  },
+  "top_stock_changes": [],
+  "stock_radar": [],
+  "etf_rankings": [],
+  "events": [],
+  "data_sources": [
+    {
+      "name": "TWSE ETF e添富",
+      "type": "ETF master / AUM / ranking",
+      "update_freq": "每日或盤中依官方更新",
+      "status": "ready",
+      "fields": ["etf_code", "etf_name", "aum", "close", "issuer"]
+    },
+    {
+      "name": "TWSE / TPEx ETF 交易資料",
+      "type": "成交價量 / 折溢價輔助",
+      "update_freq": "交易日",
+      "status": "ready",
+      "fields": ["close", "volume", "turnover", "premium_discount"]
+    },
+    {
+      "name": "各投信 PCF / 每日持股揭露",
+      "type": "每日持股核心資料",
+      "update_freq": "每日盤前或盤後",
+      "status": "watch",
+      "fields": ["stock_code", "shares", "weight", "cash_component"]
+    }
+  ],
+  "ai_report": {
+    "headline": "尚未產生今日 ETF 籌碼報告。",
+    "summary": "請等待 GitHub Actions 每日產生最新資料。",
+    "watchlist": [],
+    "risk": "資料尚未更新，請勿作為投資依據。"
+  }
+}
