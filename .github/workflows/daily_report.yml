@@ -5,13 +5,10 @@ on:
   schedule:
     # 台灣 14:45 = UTC 06:45
     - cron: "45 6 * * 1-5"
-
     # 台灣 15:15 = UTC 07:15
     - cron: "15 7 * * 1-5"
-
     # 台灣 15:45 = UTC 07:45
     - cron: "45 7 * * 1-5"
-
     # 台灣 16:15 = UTC 08:15
     - cron: "15 8 * * 1-5"
 
@@ -24,11 +21,12 @@ jobs:
 
     env:
       TOP_N_STOCKS: "10"
-      MIN_HOLDINGS_COVERAGE_RATIO: "0.85"
-      ALLOW_MASTER_ONLY_REPORT: "1"
+      MIN_TWSE_ETF_MASTER_ROWS: "50"
       HTTP_TIMEOUT: "30"
-      HTTP_SLEEP_SECONDS: "0.25"
+      HTTP_SLEEP_SECONDS: "0.35"
       LOG_LEVEL: "INFO"
+      # 預設嚴格模式：抓不到正式 TWSE ETF master 就讓 workflow 失敗，不輸出假資料。
+      ALLOW_STALE_MASTER_ON_FETCH_FAIL: "0"
 
     steps:
       - name: Checkout repository
@@ -53,5 +51,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ history/ raw/ || true
-          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update daily ETF report"
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update TWSE ETF master"
           git push
