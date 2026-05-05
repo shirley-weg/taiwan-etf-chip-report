@@ -1830,10 +1830,10 @@
     "etf_code": "00982D",
     "etf_name": "主動富邦動態入息",
     "issuer": "富邦投信",
-    "status": "parsed_zero_holdings",
+    "status": "error",
     "pcf_url": "https://websys.fsit.com.tw/FubonETF/Trade/Pcf.aspx?lan=TW&stkId=00982D",
     "holdings_count": 0,
-    "error": "PCF page fetched but no Taiwan stock holdings parsed."
+    "error": "HTTPSConnectionPool(host='websys.fsit.com.tw', port=443): Read timed out. (read timeout=30)"
   },
   {
     "etf_code": "00982T",
