@@ -642,10 +642,10 @@
     "etf_code": "00690",
     "etf_name": "兆豐藍籌30",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00692",
@@ -696,10 +696,10 @@
     "etf_code": "00703",
     "etf_name": "台新MSCI中國",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00706L",
@@ -885,28 +885,28 @@
     "etf_code": "00752",
     "etf_name": "中信中國50",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00753L",
     "etf_name": "中信中國50正2",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00757",
     "etf_name": "統一FANG+",
     "issuer": "統一投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ezmoney.com.tw/ETF/Transaction/PCF",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00762",
@@ -948,10 +948,10 @@
     "etf_code": "00775B",
     "etf_name": "新光投等債15+",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00783",
@@ -984,10 +984,10 @@
     "etf_code": "00851",
     "etf_name": "台新全球AI",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00852L",
@@ -1056,10 +1056,10 @@
     "etf_code": "00882",
     "etf_name": "中信中國高股息",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00885",
@@ -1074,10 +1074,10 @@
     "etf_code": "00891",
     "etf_name": "中信關鍵半導體",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00892",
@@ -1101,10 +1101,10 @@
     "etf_code": "00894",
     "etf_name": "中信小資高價30",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00895",
@@ -1119,10 +1119,10 @@
     "etf_code": "00896",
     "etf_name": "中信綠能及電動車",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00897",
@@ -1146,10 +1146,10 @@
     "etf_code": "00899",
     "etf_name": "FT潔淨能源",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ftft.com.tw/etf/transcation/",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00900",
@@ -1173,10 +1173,10 @@
     "etf_code": "00902",
     "etf_name": "中信電池及儲能",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00903",
@@ -1191,19 +1191,19 @@
     "etf_code": "00904",
     "etf_name": "新光臺灣半導體30",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00905",
     "etf_name": "FT臺灣SMART",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ftft.com.tw/etf/transcation/",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00907",
@@ -1245,37 +1245,37 @@
     "etf_code": "00911",
     "etf_name": "兆豐洲際半導體",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00912",
     "etf_name": "中信臺灣智慧50",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00913",
     "etf_name": "兆豐台灣晶圓製造",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00915",
     "etf_name": "凱基優選高股息30",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00916",
@@ -1290,19 +1290,19 @@
     "etf_code": "00917",
     "etf_name": "中信特選金融",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00918",
     "etf_name": "大華優利高填息30",
     "issuer": "大華銀投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.uobam.com.tw/fund/etf/pcf",
+    "holdings_count": 12,
+    "error": ""
   },
   {
     "etf_code": "00919",
@@ -1326,10 +1326,10 @@
     "etf_code": "00921",
     "etf_name": "兆豐龍頭等權重",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00922",
@@ -1362,10 +1362,10 @@
     "etf_code": "00926",
     "etf_name": "凱基全球菁英55",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00927",
@@ -1398,55 +1398,55 @@
     "etf_code": "00932",
     "etf_name": "兆豐永續高息等權",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00934",
     "etf_name": "中信成長高股息",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00935",
     "etf_name": "野村臺灣新科技50",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00936",
     "etf_name": "台新永續高息中小",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00938",
     "etf_name": "凱基優選30",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00939",
     "etf_name": "統一台灣高息動能",
     "issuer": "統一投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ezmoney.com.tw/ETF/Transaction/PCF",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00940",
@@ -1461,55 +1461,55 @@
     "etf_code": "00941",
     "etf_name": "中信上游半導體",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00943",
     "etf_name": "兆豐電子高息等權",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00944",
     "etf_name": "野村趨勢動能高息",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00945B",
     "etf_name": "凱基美國非投等債",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00946",
     "etf_name": "群益科技高息成長",
     "issuer": "群益投信",
-    "status": "parsed_zero_holdings",
+    "status": "error",
     "pcf_url": "https://www.capitalfund.com.tw/etf/transaction/buyback",
     "holdings_count": 0,
-    "error": "PCF page fetched but no Taiwan stock holdings parsed."
+    "error": "HTTPSConnectionPool(host='www.capitalfund.com.tw', port=443): Read timed out. (read timeout=30)"
   },
   {
     "etf_code": "00947",
     "etf_name": "台新臺灣IC設計",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00949",
@@ -1524,19 +1524,19 @@
     "etf_code": "00951",
     "etf_name": "台新日本半導體",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00952",
     "etf_name": "凱基台灣AI50",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00953B",
@@ -1551,64 +1551,64 @@
     "etf_code": "00954",
     "etf_name": "中信日本半導體",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00956",
     "etf_name": "中信日經高股息",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00960",
     "etf_name": "野村全球航運龍頭",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00961",
     "etf_name": "FT臺灣永續高息",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ftft.com.tw/etf/transcation/",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00962",
     "etf_name": "台新AI優息動能",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00963",
     "etf_name": "中信全球高股息",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00964",
     "etf_name": "中信亞太高股息",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00965",
@@ -1623,37 +1623,37 @@
     "etf_code": "00971",
     "etf_name": "野村美國研發龍頭",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00972",
     "etf_name": "野村日本動能高息",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009800",
     "etf_name": "中信NASDAQ",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009801",
     "etf_name": "中信美國創新科技",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009802",
@@ -1668,28 +1668,28 @@
     "etf_code": "009803",
     "etf_name": "玉山市值動能50",
     "issuer": "玉山投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.esunam.com/ETF/etf-pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009804",
     "etf_name": "聯邦台精彩50",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.usitc.com.tw/CustCenter/BuyBackList",
+    "holdings_count": 50,
+    "error": ""
   },
   {
     "etf_code": "009805",
     "etf_name": "新光美國電力基建",
     "issuer": "",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009808",
@@ -1713,37 +1713,37 @@
     "etf_code": "00980A",
     "etf_name": "主動野村臺灣優選",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009810",
     "etf_name": "玉山全球藍籌100",
     "issuer": "玉山投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.esunam.com/ETF/etf-pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009811",
     "etf_name": "統一美國50",
     "issuer": "統一投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ezmoney.com.tw/ETF/Transaction/PCF",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009812",
     "etf_name": "野村日本東證",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009813",
@@ -1758,10 +1758,10 @@
     "etf_code": "009816",
     "etf_name": "凱基台灣TOP50",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009817",
@@ -1785,28 +1785,28 @@
     "etf_code": "009819",
     "etf_name": "中信數據及電力",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00981A",
     "etf_name": "主動統一台股增長",
     "issuer": "統一投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ezmoney.com.tw/ETF/Transaction/PCF",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00981T",
     "etf_name": "平衡凱基雙核收息",
     "issuer": "凱基投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.kgifund.com.tw/Fund/RedemptionList",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "009820",
@@ -1830,28 +1830,28 @@
     "etf_code": "00982D",
     "etf_name": "主動富邦動態入息",
     "issuer": "富邦投信",
-    "status": "error",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://websys.fsit.com.tw/FubonETF/Trade/Pcf.aspx?lan=TW&stkId=00982D",
     "holdings_count": 0,
-    "error": "HTTPSConnectionPool(host='websys.fsit.com.tw', port=443): Read timed out. (read timeout=30)"
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00982T",
     "etf_name": "平衡兆豐台美動能",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00983A",
     "etf_name": "主動中信ARK創新",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00983D",
@@ -1884,10 +1884,10 @@
     "etf_code": "00985A",
     "etf_name": "主動野村台灣50",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00985B",
@@ -1902,28 +1902,28 @@
     "etf_code": "00986A",
     "etf_name": "主動台新龍頭成長",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00987A",
     "etf_name": "主動台新優勢成長",
     "issuer": "台新投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00988A",
     "etf_name": "主動統一全球創新",
     "issuer": "統一投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ezmoney.com.tw/ETF/Transaction/PCF",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00989A",
@@ -1983,19 +1983,19 @@
     "etf_code": "00995A",
     "etf_name": "主動中信台灣卓越",
     "issuer": "中國信託投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.ctbcinvestments.com/Etf/Buyback",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   },
   {
     "etf_code": "00996A",
     "etf_name": "主動兆豐台灣豐收",
     "issuer": "兆豐投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
-    "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "status": "ok",
+    "pcf_url": "https://www.megafunds.com.tw/MEGA/etf/trade_pcf.aspx",
+    "holdings_count": 30,
+    "error": ""
   },
   {
     "etf_code": "00997A",
@@ -2010,9 +2010,9 @@
     "etf_code": "00999A",
     "etf_name": "主動野村臺灣高息",
     "issuer": "野村投信",
-    "status": "no_pcf_url",
-    "pcf_url": "",
+    "status": "parsed_zero_holdings",
+    "pcf_url": "https://www.nomurafunds.com.tw/ETFWEB/pcf",
     "holdings_count": 0,
-    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+    "error": "PCF page fetched but no Taiwan stock holdings parsed."
   }
 ]

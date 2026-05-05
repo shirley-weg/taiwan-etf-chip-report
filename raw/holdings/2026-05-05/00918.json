@@ -1,0 +1,127 @@
+{
+  "trade_date": "2026.05.04",
+  "etf_code": "00918",
+  "etf_name": "大華優利高填息30",
+  "issuer": "大華銀投信",
+  "market": "TWSE",
+  "source": "issuer_pcf",
+  "source_url": "https://www.uobam.com.tw/fund/etf/pcf",
+  "pcf_meta": {
+    "trade_date": "2026.05.04",
+    "fund_nav": 0.0,
+    "outstanding_units": 0.0,
+    "unit_diff": 0.0,
+    "nav_per_unit": 0.0,
+    "creation_unit": 0.0
+  },
+  "holdings": [
+    {
+      "stock_code": "1854",
+      "stock_name": "NT$ 23,122,876",
+      "shares": 0.35,
+      "weight_pct": 0.35,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "2637",
+      "stock_name": "NT$ 116,049,933",
+      "shares": 1.77,
+      "weight_pct": 1.77,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "4183",
+      "stock_name": "NT$ 23,803,143",
+      "shares": 0.36,
+      "weight_pct": 0.36,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "5374",
+      "stock_name": "NT$ 64,905,028",
+      "shares": 0.99,
+      "weight_pct": 0.99,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "5466",
+      "stock_name": "NT$ 30,020,369",
+      "shares": 0.46,
+      "weight_pct": 0.46,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "6173",
+      "stock_name": "NT$ 52,462,703",
+      "shares": 0.8,
+      "weight_pct": 0.8,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "6182",
+      "stock_name": "NT$ 35,365,695",
+      "shares": 0.54,
+      "weight_pct": 0.54,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "6353",
+      "stock_name": "NT$ 45,545,247",
+      "shares": 0.69,
+      "weight_pct": 0.69,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "7247",
+      "stock_name": "NT$ 38,914,338",
+      "shares": 0.59,
+      "weight_pct": 0.59,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "7260",
+      "stock_name": "NT$ 35,752,654",
+      "shares": 0.55,
+      "weight_pct": 0.55,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "7638",
+      "stock_name": "NT$ 125,009,200",
+      "shares": 1.91,
+      "weight_pct": 1.91,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    },
+    {
+      "stock_code": "8489",
+      "stock_name": "NT$ 66,660,212",
+      "shares": 1.02,
+      "weight_pct": 1.02,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "table_1"
+    }
+  ]
+}
