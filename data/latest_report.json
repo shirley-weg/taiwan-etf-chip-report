@@ -1,23 +1,23 @@
 {
   "meta": {
-    "report_date": "2026-05-16",
-    "updated_at": "2026-05-16 19:29:50",
+    "report_date": "2026-05-17",
+    "updated_at": "2026-05-17 19:35:57",
     "timezone": "Asia/Taipei",
     "tracked_etfs": 225,
-    "covered_etfs": 8,
-    "coverage_ratio": 0.0356,
+    "covered_etfs": 30,
+    "coverage_ratio": 0.1333,
     "universe": "TWSE listed ETFs",
     "market_bias": "PCF 已更新",
     "snapshot_mode": "production_issuer_pcf",
-    "previous_snapshot_date": "2026-05-15",
+    "previous_snapshot_date": "2026-05-16",
     "sample_mode": false
   },
   "data_quality": {
     "tracked_etfs": 225,
-    "covered_etfs": 8,
-    "coverage_ratio": 0.0356,
+    "covered_etfs": 30,
+    "coverage_ratio": 0.1333,
     "min_required_coverage_ratio": 0.1,
-    "is_ready": false
+    "is_ready": true
   },
   "kpis": {
     "net_change_value_yi": 0,
@@ -2288,7 +2288,7 @@
     {
       "time": "資料檢查",
       "title": "PCF 持股快照覆蓋率",
-      "desc": "今日已成功解析 8/225 檔 ETF PCF，覆蓋率 3.6%。"
+      "desc": "今日已成功解析 30/225 檔 ETF PCF，覆蓋率 13.3%。"
     }
   ],
   "data_sources": [
@@ -2347,7 +2347,7 @@
     }
   ],
   "ai_report": {
-    "headline": "TWSE ETF master 已更新，今日成功解析 PCF 覆蓋率 3.6%。",
+    "headline": "TWSE ETF master 已更新，今日成功解析 PCF 覆蓋率 13.3%。",
     "summary": "目前系統已接上真實 PCF crawler，不再使用 sample holdings。若前十大個股變動仍為空，常見原因是：第一天尚無前一交易日 raw/holdings 快照可比較，或目前成功解析的 PCF ETF 數量不足。請等下一個交易日或補齊 data/pcf_source_registry.json。",
     "watchlist": [],
     "risk": "PCF 來自各投信網站，格式可能調整；請查看 data/pcf_fetch_status.json 確認覆蓋率與錯誤原因。"
