@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.06.01",
+  "trade_date": "2026.06.02",
   "etf_code": "00680L",
   "etf_name": "元大美債20正2",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.06.01",
+    "trade_date": "2026.06.02",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -24,7 +24,7 @@
   },
   "holdings": [
     {
-      "stock_code": "6980",
+      "stock_code": "6865",
       "stock_name": "商品權重",
       "shares": 202609.0,
       "weight_pct": 0.0,
