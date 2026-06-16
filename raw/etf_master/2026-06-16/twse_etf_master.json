@@ -4347,6 +4347,27 @@
     "remark": "nan"
   },
   {
+    "etf_code": "009821",
+    "etf_name": "野村稀土關鍵資源",
+    "isin": "TW0000098219",
+    "listing_date": "2026.06.17",
+    "benchmark": "",
+    "issuer": "野村投信",
+    "market": "TWSE",
+    "security_type": "ETF",
+    "source": "TWSE ISIN class_main",
+    "source_url": "https://isin.twse.com.tw/isin/class_main.jsp",
+    "category": "",
+    "aum_yi": 0.0,
+    "close": 0.0,
+    "avg_daily_trading_value_ytd_million": 0.0,
+    "avg_daily_trading_volume_ytd_shares": 0,
+    "beneficiaries": 0,
+    "top10_weight_pct": 0.0,
+    "cfi_code": "CEOGEU",
+    "remark": "nan"
+  },
+  {
     "etf_code": "00982A",
     "etf_name": "主動群益台灣強棒",
     "isin": "TW00000982A0",

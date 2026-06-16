@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.06.15",
+  "trade_date": "2026.06.16",
   "etf_code": "0056",
   "etf_name": "元大高股息",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.06.15",
+    "trade_date": "2026.06.16",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -24,7 +24,7 @@
   },
   "holdings": [
     {
-      "stock_code": "1047",
+      "stock_code": "1050",
       "stock_name": "股票代碼",
       "shares": 1477.0,
       "weight_pct": 0.0,
@@ -35,7 +35,7 @@
     {
       "stock_code": "1102",
       "stock_name": "股票名稱",
-      "shares": 5715.0,
+      "shares": 5731.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -44,7 +44,7 @@
     {
       "stock_code": "1216",
       "stock_name": "股票名稱",
-      "shares": 7262.0,
+      "shares": 7282.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -53,7 +53,7 @@
     {
       "stock_code": "1319",
       "stock_name": "股票名稱",
-      "shares": 1047.0,
+      "shares": 1050.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -62,14 +62,14 @@
     {
       "stock_code": "2006",
       "stock_name": "股票名稱",
-      "shares": 1293.0,
+      "shares": 1296.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "5715",
+      "stock_code": "5731",
       "stock_name": "股票代碼",
       "shares": 1216.0,
       "weight_pct": 0.0,
@@ -78,7 +78,7 @@
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "7262",
+      "stock_code": "7282",
       "stock_name": "股票代碼",
       "shares": 1319.0,
       "weight_pct": 0.0,

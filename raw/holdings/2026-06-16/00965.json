@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.06.15",
+  "trade_date": "2026.06.16",
   "etf_code": "00965",
   "etf_name": "元大航太防衛科技",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.06.15",
+    "trade_date": "2026.06.16",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,

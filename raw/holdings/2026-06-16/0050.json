@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.06.15",
+  "trade_date": "2026.06.16",
   "etf_code": "0050",
   "etf_name": "元大台灣50",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.06.15",
+    "trade_date": "2026.06.16",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,7 +26,7 @@
     {
       "stock_code": "1216",
       "stock_name": "股票名稱",
-      "shares": 2594.0,
+      "shares": 2595.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -35,7 +35,7 @@
     {
       "stock_code": "1301",
       "stock_name": "股票名稱",
-      "shares": 2210.0,
+      "shares": 2211.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -44,7 +44,7 @@
     {
       "stock_code": "1303",
       "stock_name": "股票名稱",
-      "shares": 2596.0,
+      "shares": 2597.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -53,14 +53,14 @@
     {
       "stock_code": "2002",
       "stock_name": "股票名稱",
-      "shares": 5889.0,
+      "shares": 5892.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "2210",
+      "stock_code": "2211",
       "stock_name": "股票代碼",
       "shares": 1303.0,
       "weight_pct": 0.0,
@@ -69,7 +69,7 @@
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "2594",
+      "stock_code": "2595",
       "stock_name": "股票代碼",
       "shares": 1301.0,
       "weight_pct": 0.0,
@@ -78,7 +78,7 @@
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "2596",
+      "stock_code": "2597",
       "stock_name": "股票代碼",
       "shares": 2002.0,
       "weight_pct": 0.0,
@@ -87,7 +87,7 @@
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "5889",
+      "stock_code": "5892",
       "stock_name": "股票代碼",
       "shares": 2059.0,
       "weight_pct": 0.0,
