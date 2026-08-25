@@ -1,0 +1,72 @@
+{
+  "trade_date": "2026.08.25",
+  "etf_code": "0053",
+  "etf_name": "元大電子",
+  "issuer": "元大投信",
+  "market": "TWSE",
+  "source": "issuer_pcf",
+  "source_url": "https://www.yuantaetfs.com/tradeInfo/pcf/0053",
+  "pcf_identity": {
+    "ok": true,
+    "method": "visible_context_match",
+    "target_etf_code": "0053",
+    "target_etf_name": "元大電子",
+    "matched_context": "(0053)元大台灣ETF傘型證券投資信託基金之電子科技證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
+    "reason": "Page title/header/selected option visibly matches target ETF."
+  },
+  "pcf_meta": {
+    "trade_date": "2026.08.25",
+    "fund_nav": 0.0,
+    "outstanding_units": 0.0,
+    "unit_diff": 0.0,
+    "nav_per_unit": 0.0,
+    "creation_unit": 0.0
+  },
+  "holdings": [
+    {
+      "stock_code": "2308",
+      "stock_name": "商品名稱",
+      "shares": 47417.0,
+      "weight_pct": 3.44,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    },
+    {
+      "stock_code": "2317",
+      "stock_name": "商品名稱",
+      "shares": 187079.0,
+      "weight_pct": 1.93,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "商品名稱",
+      "shares": 497352.0,
+      "weight_pct": 50.57,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    },
+    {
+      "stock_code": "2454",
+      "stock_name": "商品名稱",
+      "shares": 31823.0,
+      "weight_pct": 5.04,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "商品名稱",
+      "shares": 94396.0,
+      "weight_pct": 2.36,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    }
+  ]
+}

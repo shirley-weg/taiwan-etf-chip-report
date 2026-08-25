@@ -1,0 +1,36 @@
+{
+  "trade_date": "2026.08.18",
+  "etf_code": "00920",
+  "etf_name": "富邦ESG綠色電力",
+  "issuer": "富邦投信",
+  "market": "TWSE",
+  "source": "issuer_pcf",
+  "source_url": "https://websys.fsit.com.tw/FubonETF/Trade/Pcf.aspx?lan=TW&stkId=00920",
+  "pcf_identity": {
+    "ok": true,
+    "method": "url_code_and_page_text_match",
+    "target_etf_code": "00920",
+    "target_etf_name": "富邦ESG綠色電力",
+    "matched_context": "00920",
+    "reason": "Direct PCF URL contains ETF code and fetched page text mentions target ETF."
+  },
+  "pcf_meta": {
+    "trade_date": "2026.08.18",
+    "fund_nav": 0.0,
+    "outstanding_units": 0.0,
+    "unit_diff": 0.0,
+    "nav_per_unit": 0.0,
+    "creation_unit": 0.0
+  },
+  "holdings": [
+    {
+      "stock_code": "0052",
+      "stock_name": "富邦科技",
+      "shares": 62643.0,
+      "weight_pct": 60.85,
+      "close": 0.0,
+      "market_value": 0.0,
+      "source_table": "text_fallback"
+    }
+  ]
+}
