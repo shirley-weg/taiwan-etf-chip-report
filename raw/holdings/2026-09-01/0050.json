@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.08.31",
+  "trade_date": "2026.09.01",
   "etf_code": "0050",
   "etf_name": "元大台灣50",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.08.31",
+    "trade_date": "2026.09.01",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,

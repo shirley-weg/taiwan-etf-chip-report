@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.08.31",
+  "trade_date": "2026.09.01",
   "etf_code": "00876",
   "etf_name": "元大全球5G",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.08.31",
+    "trade_date": "2026.09.01",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -27,7 +27,7 @@
       "stock_code": "2454",
       "stock_name": "商品名稱",
       "shares": 140000.0,
-      "weight_pct": 6.81,
+      "weight_pct": 6.74,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -36,7 +36,7 @@
       "stock_code": "9050",
       "stock_name": "商品權重",
       "shares": 41000.0,
-      "weight_pct": 6.08,
+      "weight_pct": 5.92,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"

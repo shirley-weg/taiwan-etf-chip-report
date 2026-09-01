@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.09.01",
+  "trade_date": "2026.09.02",
   "etf_code": "0057",
   "etf_name": "富邦摩台",
   "issuer": "富邦投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.09.01",
+    "trade_date": "2026.09.02",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,7 +26,7 @@
     {
       "stock_code": "1216",
       "stock_name": "統一",
-      "shares": 7079.0,
+      "shares": 7080.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -80,7 +80,7 @@
     {
       "stock_code": "2002",
       "stock_name": "中鋼",
-      "shares": 17298.0,
+      "shares": 17299.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -152,7 +152,7 @@
     {
       "stock_code": "2330",
       "stock_name": "台積電",
-      "shares": 36111.0,
+      "shares": 36113.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -260,7 +260,7 @@
     {
       "stock_code": "2408",
       "stock_name": "南亞科",
-      "shares": 1896.0,
+      "shares": 1897.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -332,7 +332,7 @@
     {
       "stock_code": "2880",
       "stock_name": "華南金",
-      "shares": 13392.0,
+      "shares": 13393.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -341,7 +341,7 @@
     {
       "stock_code": "2881",
       "stock_name": "富邦金",
-      "shares": 12319.0,
+      "shares": 12320.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -350,7 +350,7 @@
     {
       "stock_code": "2882",
       "stock_name": "國泰金",
-      "shares": 13976.0,
+      "shares": 13977.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -368,7 +368,7 @@
     {
       "stock_code": "2884",
       "stock_name": "玉山金",
-      "shares": 22082.0,
+      "shares": 22083.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -377,7 +377,7 @@
     {
       "stock_code": "2885",
       "stock_name": "元大金",
-      "shares": 15750.0,
+      "shares": 15751.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -395,7 +395,7 @@
     {
       "stock_code": "2887",
       "stock_name": "台新新光金",
-      "shares": 33132.0,
+      "shares": 33134.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -404,7 +404,7 @@
     {
       "stock_code": "2890",
       "stock_name": "永豐金",
-      "shares": 17876.0,
+      "shares": 17877.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -413,7 +413,7 @@
     {
       "stock_code": "2891",
       "stock_name": "中信金",
-      "shares": 24516.0,
+      "shares": 24517.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -422,7 +422,7 @@
     {
       "stock_code": "2892",
       "stock_name": "第一金",
-      "shares": 16335.0,
+      "shares": 16336.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -503,7 +503,7 @@
     {
       "stock_code": "3481",
       "stock_name": "群創",
-      "shares": 10832.0,
+      "shares": 10833.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -656,7 +656,7 @@
     {
       "stock_code": "6669",
       "stock_name": "緯穎",
-      "shares": 150.0,
+      "shares": 447.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
