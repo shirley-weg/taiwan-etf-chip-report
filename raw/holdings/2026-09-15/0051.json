@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.09.14",
+  "trade_date": "2026.09.15",
   "etf_code": "0051",
   "etf_name": "元大中型100",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.09.14",
+    "trade_date": "2026.09.15",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,7 +26,7 @@
     {
       "stock_code": "1101",
       "stock_name": "股票名稱",
-      "shares": 42011.0,
+      "shares": 42032.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -35,7 +35,7 @@
     {
       "stock_code": "1102",
       "stock_name": "股票名稱",
-      "shares": 15026.0,
+      "shares": 15034.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -44,7 +44,7 @@
     {
       "stock_code": "1229",
       "stock_name": "股票名稱",
-      "shares": 6428.0,
+      "shares": 6431.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -53,7 +53,7 @@
     {
       "stock_code": "1301",
       "stock_name": "股票名稱",
-      "shares": 26241.0,
+      "shares": 26254.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -62,14 +62,14 @@
     {
       "stock_code": "1326",
       "stock_name": "股票名稱",
-      "shares": 21283.0,
+      "shares": 21294.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "6428",
+      "stock_code": "6431",
       "stock_name": "股票代碼",
       "shares": 1301.0,
       "weight_pct": 0.0,

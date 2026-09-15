@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.09.14",
+  "trade_date": "2026.09.15",
   "etf_code": "0053",
   "etf_name": "元大電子",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.09.14",
+    "trade_date": "2026.09.15",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,8 +26,8 @@
     {
       "stock_code": "2308",
       "stock_name": "商品名稱",
-      "shares": 47417.0,
-      "weight_pct": 3.23,
+      "shares": 49417.0,
+      "weight_pct": 3.33,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -35,8 +35,8 @@
     {
       "stock_code": "2317",
       "stock_name": "商品名稱",
-      "shares": 187079.0,
-      "weight_pct": 1.96,
+      "shares": 201079.0,
+      "weight_pct": 2.0,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -44,8 +44,8 @@
     {
       "stock_code": "2330",
       "stock_name": "商品名稱",
-      "shares": 502352.0,
-      "weight_pct": 50.29,
+      "shares": 522352.0,
+      "weight_pct": 50.22,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -53,8 +53,8 @@
     {
       "stock_code": "2454",
       "stock_name": "商品名稱",
-      "shares": 31823.0,
-      "weight_pct": 6.1,
+      "shares": 32823.0,
+      "weight_pct": 5.86,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -62,8 +62,8 @@
     {
       "stock_code": "3711",
       "stock_name": "商品名稱",
-      "shares": 94396.0,
-      "weight_pct": 2.43,
+      "shares": 98396.0,
+      "weight_pct": 2.35,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"

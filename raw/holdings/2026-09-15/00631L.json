@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.09.14",
+  "trade_date": "2026.09.15",
   "etf_code": "00631L",
   "etf_name": "元大台灣50正2",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.09.14",
+    "trade_date": "2026.09.15",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -27,25 +27,16 @@
       "stock_code": "2330",
       "stock_name": "商品名稱",
       "shares": 45587000.0,
-      "weight_pct": 43.11,
+      "weight_pct": 43.41,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
     },
     {
-      "stock_code": "3000",
+      "stock_code": "7800",
       "stock_name": "商品權重",
       "shares": 202610.0,
-      "weight_pct": 1.27,
-      "close": 0.0,
-      "market_value": 0.0,
-      "source_table": "text_fallback"
-    },
-    {
-      "stock_code": "4800",
-      "stock_name": "商品權重",
-      "shares": 202609.0,
-      "weight_pct": 2.04,
+      "weight_pct": 3.32,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
