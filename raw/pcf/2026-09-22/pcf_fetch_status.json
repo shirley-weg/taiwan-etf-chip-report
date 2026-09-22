@@ -470,7 +470,7 @@
     "issuer": "元大投信",
     "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00637L",
-    "holdings_count": 2,
+    "holdings_count": 1,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1617,10 +1617,18 @@
     "etf_code": "00851",
     "etf_name": "台新全球AI",
     "issuer": "台新投信",
-    "status": "pcf_code_mismatch",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00851\", \"target_etf_name\": \"台新全球AI\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "00851",
+      "target_etf_name": "台新全球AI",
+      "matched_context": "(00851) 台新全球AI",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00852L",
@@ -1672,7 +1680,7 @@
     "issuer": "元大投信",
     "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00876",
-    "holdings_count": 3,
+    "holdings_count": 2,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1916,7 +1924,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.ftft.com.tw/etf/transcation/",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00905\", \"target_etf_name\": \"FT臺灣SMART\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00905\", \"target_etf_name\": \"FT臺灣SMART\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"富蘭克林華美投信 ETF專區\"]}"
   },
   {
     "etf_code": "00907",
@@ -2236,7 +2244,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00939",
       "target_etf_name": "統一台灣高息動能",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/21 00939 統一台灣高息動能 24.47 0.04 0.16%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/22 00939 統一台灣高息動能 24.36 -0.11 -0.45%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2333,18 +2341,10 @@
     "etf_code": "00951",
     "etf_name": "台新日本半導體",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00951",
-      "target_etf_name": "台新日本半導體",
-      "matched_context": "(00951) 台新日本半導體",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00951\", \"target_etf_name\": \"台新日本半導體\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00952",
@@ -2543,10 +2543,18 @@
     "etf_code": "009805",
     "etf_name": "台新美國電力基建",
     "issuer": "台新投信",
-    "status": "pcf_code_mismatch",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"009805\", \"target_etf_name\": \"台新美國電力基建\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "009805",
+      "target_etf_name": "台新美國電力基建",
+      "matched_context": "(009805) 台新美國電力基建（原名：新光美國電力基建）",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "009808",
@@ -2683,7 +2691,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00981A",
       "target_etf_name": "主動統一台股增長",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/21 00981A 主動統一台股增長 29.73 0.54 1.85% 09/21 00403A 主動統一升級50 10.56 0.15 1.44%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/22 00981A 主動統一台股增長 30.30 0.57 1.92% 09/22 00403A 主動統一升級50 10.76 0.20 1.89%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2911,7 +2919,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00988A",
       "target_etf_name": "主動統一全球創新",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/18 00988A 主動統一全球創新 16.34 0.28 1.74% 09/18 00411A 主動統一前沿科技 10.15 0.11 1.10% 09/18 00987D 主動統一美債量化 9.8300 -0.1059 -1.07%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 09/21 00988A 主動統一全球創新 16.71 0.37 2.26% 09/21 00411A 主動統一前沿科技 10.43 0.28 2.76% 09/21 00987D 主動統一美債量化 9.9146 0.0846 0.86%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."

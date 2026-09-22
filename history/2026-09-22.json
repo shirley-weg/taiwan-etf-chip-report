@@ -1,7 +1,7 @@
 {
   "meta": {
     "report_date": "2026-09-22",
-    "updated_at": "2026-09-22 00:32:48",
+    "updated_at": "2026-09-22 23:07:25",
     "timezone": "Asia/Taipei",
     "tracked_etfs": 240,
     "covered_etfs": 27,
@@ -27,13 +27,57 @@
   },
   "top_stock_changes": [
     {
+      "stock_code": "3491",
+      "stock_name": "昇達科",
+      "direction": "neutral",
+      "delta_lot": -60.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -6.55,
+      "signal": "昇達科 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "日月光投控",
+      "direction": "neutral",
+      "delta_lot": 80.6,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": 3.6615,
+      "signal": "日月光投控 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "4958",
+      "stock_name": "臻鼎-KY",
+      "direction": "neutral",
+      "delta_lot": 54.3,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": 1.6554,
+      "signal": "臻鼎-KY 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "6669",
+      "stock_name": "緯穎",
+      "direction": "neutral",
+      "delta_lot": -67.7,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -7.8373,
+      "signal": "緯穎 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
       "stock_code": "1216",
       "stock_name": "股票名稱",
       "direction": "neutral",
-      "delta_lot": -0.9,
+      "delta_lot": -4.5,
       "delta_value_yi": 0.0,
       "etf_count": 0,
-      "weight_delta_pct": -0.012,
+      "weight_delta_pct": -0.0165,
       "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
       "participating_etfs": []
     },
@@ -41,10 +85,10 @@
       "stock_code": "1303",
       "stock_name": "股票名稱",
       "direction": "neutral",
-      "delta_lot": 15.0,
+      "delta_lot": 11.4,
       "delta_value_yi": 0.0,
       "etf_count": 0,
-      "weight_delta_pct": 0.0884,
+      "weight_delta_pct": 0.0174,
       "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
       "participating_etfs": []
     },
@@ -91,53 +135,49 @@
       "weight_delta_pct": 0.0,
       "signal": "股票代碼 今日 ETF 籌碼變化有限，暫列觀察。",
       "participating_etfs": []
-    },
-    {
-      "stock_code": "1101",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.1,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1102",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.1,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1229",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1301",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.1,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
     }
   ],
   "stock_radar": [
+    {
+      "stock_code": "3491",
+      "stock_name": "昇達科",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "昇達科 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "日月光投控",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "日月光投控 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "4958",
+      "stock_name": "臻鼎-KY",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "臻鼎-KY 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "6669",
+      "stock_name": "緯穎",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "緯穎 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
     {
       "stock_code": "1216",
       "stock_name": "股票名稱",
@@ -197,46 +237,6 @@
       "streak_days": 1,
       "event_type": "觀察",
       "note": "股票代碼 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1101",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1102",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1229",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1301",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
     }
   ],
   "etf_rankings": [
@@ -1004,9 +1004,9 @@
       "etf_code": "00930",
       "etf_name": "永豐ESG低碳高息",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1204,9 +1204,9 @@
       "etf_code": "00907",
       "etf_name": "永豐優息存股",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1254,9 +1254,9 @@
       "etf_code": "00901",
       "etf_name": "永豐智能車供應鏈",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1464,9 +1464,9 @@
       "etf_code": "00850",
       "etf_name": "元大臺灣ESG永續",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2304,9 +2304,9 @@
       "etf_code": "00637L",
       "etf_name": "元大滬深300正2",
       "aum_yi": 0.0,
-      "buy_value_yi": 0.0,
-      "sell_value_yi": 0.0,
-      "net_flow_yi": 0.0,
+      "buy_value_yi": 0,
+      "sell_value_yi": 0,
+      "net_flow_yi": 0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2434,9 +2434,9 @@
       "etf_code": "006204",
       "etf_name": "永豐臺灣加權",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2534,9 +2534,9 @@
       "etf_code": "00410A",
       "etf_name": "主動永豐科技趨勢",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2712,11 +2712,11 @@
     "headline": "今日全市場 ETF 籌碼中性，前十大變動淨額 0.0 億元。",
     "summary": "本報告以 TWSE ETF master 與各投信 PCF 持股快照計算。今日 PCF 覆蓋率為 11.2%，前十大變動集中度為 0%。",
     "watchlist": [
-      "1216 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "1303 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2572 股票代碼：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2573 股票代碼：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2580 股票代碼：ETF 減碼 0.00 億，參與 ETF 0 檔"
+      "3491 昇達科：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "3711 日月光投控：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "4958 臻鼎-KY：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "6669 緯穎：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "1216 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔"
     ],
     "risk": "若 PCF 覆蓋率未達 100%，請避免將報告視為完整市場結論。"
   }

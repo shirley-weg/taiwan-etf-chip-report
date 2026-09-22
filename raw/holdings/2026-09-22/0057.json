@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.09.22",
+  "trade_date": "2026.09.23",
   "etf_code": "0057",
   "etf_name": "富邦摩台",
   "issuer": "富邦投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.09.22",
+    "trade_date": "2026.09.23",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,7 +26,7 @@
     {
       "stock_code": "1216",
       "stock_name": "統一",
-      "shares": 7087.0,
+      "shares": 7086.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -80,7 +80,7 @@
     {
       "stock_code": "2002",
       "stock_name": "中鋼",
-      "shares": 17316.0,
+      "shares": 17315.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -116,7 +116,7 @@
     {
       "stock_code": "2303",
       "stock_name": "聯電",
-      "shares": 16609.0,
+      "shares": 16608.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -368,7 +368,7 @@
     {
       "stock_code": "2884",
       "stock_name": "玉山金",
-      "shares": 22105.0,
+      "shares": 22104.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
