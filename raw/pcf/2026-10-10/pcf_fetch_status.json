@@ -1617,18 +1617,10 @@
     "etf_code": "00851",
     "etf_name": "台新全球AI",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00851",
-      "target_etf_name": "台新全球AI",
-      "matched_context": "(00851) 台新全球AI",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00851\", \"target_etf_name\": \"台新全球AI\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00852L",
@@ -2315,18 +2307,10 @@
     "etf_code": "00947",
     "etf_name": "台新臺灣IC設計",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00947",
-      "target_etf_name": "台新臺灣IC設計",
-      "matched_context": "(00947) 台新臺灣IC設計",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00947\", \"target_etf_name\": \"台新臺灣IC設計\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00949",
