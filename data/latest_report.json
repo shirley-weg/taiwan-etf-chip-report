@@ -1,7 +1,7 @@
 {
   "meta": {
-    "report_date": "2026-10-10",
-    "updated_at": "2026-10-10 23:56:39",
+    "report_date": "2026-10-12",
+    "updated_at": "2026-10-12 00:23:58",
     "timezone": "Asia/Taipei",
     "tracked_etfs": 240,
     "covered_etfs": 29,
@@ -9,7 +9,7 @@
     "universe": "TWSE listed ETFs",
     "market_bias": "PCF 已更新",
     "snapshot_mode": "production_issuer_pcf",
-    "previous_snapshot_date": "2026-10-09",
+    "previous_snapshot_date": "2026-10-10",
     "sample_mode": false
   },
   "data_quality": {
