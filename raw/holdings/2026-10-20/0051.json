@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.10.19",
+  "trade_date": "2026.10.20",
   "etf_code": "0051",
   "etf_name": "元大中型100",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.10.19",
+    "trade_date": "2026.10.20",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,7 +26,7 @@
     {
       "stock_code": "1101",
       "stock_name": "股票名稱",
-      "shares": 41867.0,
+      "shares": 41869.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -35,7 +35,7 @@
     {
       "stock_code": "1102",
       "stock_name": "股票名稱",
-      "shares": 14975.0,
+      "shares": 14976.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -53,7 +53,7 @@
     {
       "stock_code": "1301",
       "stock_name": "股票名稱",
-      "shares": 26151.0,
+      "shares": 26153.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
@@ -62,7 +62,7 @@
     {
       "stock_code": "1326",
       "stock_name": "股票名稱",
-      "shares": 21210.0,
+      "shares": 21212.0,
       "weight_pct": 0.0,
       "close": 0.0,
       "market_value": 0.0,
