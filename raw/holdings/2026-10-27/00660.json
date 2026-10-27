@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.10.22",
+  "trade_date": "2026.10.27",
   "etf_code": "00660",
   "etf_name": "元大歐洲50",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.10.22",
+    "trade_date": "2026.10.27",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -27,7 +27,7 @@
       "stock_code": "1389",
       "stock_name": "商品權重",
       "shares": 4319.0,
-      "weight_pct": 4.21,
+      "weight_pct": 4.13,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -36,7 +36,7 @@
       "stock_code": "1905",
       "stock_name": "商品權重",
       "shares": 1389.0,
-      "weight_pct": 4.51,
+      "weight_pct": 4.77,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -45,7 +45,7 @@
       "stock_code": "4319",
       "stock_name": "商品權重",
       "shares": 28429.0,
-      "weight_pct": 3.97,
+      "weight_pct": 4.02,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"

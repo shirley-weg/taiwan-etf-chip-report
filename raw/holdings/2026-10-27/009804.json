@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.10.23",
+  "trade_date": "2026.10.28",
   "etf_code": "009804",
   "etf_name": "聯邦台精彩50",
   "issuer": "",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.10.23",
+    "trade_date": "2026.10.28",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -27,7 +27,7 @@
       "stock_code": "1216",
       "stock_name": "統一",
       "shares": 242464.0,
-      "weight_pct": 0.6034,
+      "weight_pct": 0.6092,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -36,7 +36,7 @@
       "stock_code": "1303",
       "stock_name": "南亞",
       "shares": 252700.0,
-      "weight_pct": 2.378,
+      "weight_pct": 2.3551,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -45,7 +45,7 @@
       "stock_code": "2059",
       "stock_name": "川湖",
       "shares": 3105.0,
-      "weight_pct": 0.9469,
+      "weight_pct": 0.9542,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -54,7 +54,7 @@
       "stock_code": "2301",
       "stock_name": "光寶科",
       "shares": 103970.0,
-      "weight_pct": 0.8305,
+      "weight_pct": 0.8224,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -63,7 +63,7 @@
       "stock_code": "2303",
       "stock_name": "聯電",
       "shares": 598546.0,
-      "weight_pct": 2.3484,
+      "weight_pct": 2.2969,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -72,7 +72,7 @@
       "stock_code": "2308",
       "stock_name": "台達電",
       "shares": 98767.0,
-      "weight_pct": 4.817,
+      "weight_pct": 4.672,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -81,7 +81,7 @@
       "stock_code": "2317",
       "stock_name": "鴻海",
       "shares": 622296.0,
-      "weight_pct": 4.7665,
+      "weight_pct": 4.8248,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -90,7 +90,7 @@
       "stock_code": "2327",
       "stock_name": "國巨*",
       "shares": 80068.0,
-      "weight_pct": 1.2691,
+      "weight_pct": 1.3068,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -99,7 +99,7 @@
       "stock_code": "2330",
       "stock_name": "台積電",
       "shares": 400955.0,
-      "weight_pct": 29.8966,
+      "weight_pct": 30.1451,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -108,7 +108,7 @@
       "stock_code": "2344",
       "stock_name": "華邦電",
       "shares": 161791.0,
-      "weight_pct": 0.7815,
+      "weight_pct": 0.8261,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -117,7 +117,7 @@
       "stock_code": "2345",
       "stock_name": "智邦",
       "shares": 25255.0,
-      "weight_pct": 1.4015,
+      "weight_pct": 1.3924,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -126,7 +126,7 @@
       "stock_code": "2357",
       "stock_name": "華碩",
       "shares": 35124.0,
-      "weight_pct": 1.0388,
+      "weight_pct": 1.064,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -135,7 +135,7 @@
       "stock_code": "2360",
       "stock_name": "致茂",
       "shares": 19129.0,
-      "weight_pct": 1.1841,
+      "weight_pct": 1.1715,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -144,7 +144,7 @@
       "stock_code": "2368",
       "stock_name": "金像電",
       "shares": 17422.0,
-      "weight_pct": 0.6073,
+      "weight_pct": 0.5894,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -153,7 +153,7 @@
       "stock_code": "2382",
       "stock_name": "廣達",
       "shares": 131618.0,
-      "weight_pct": 1.325,
+      "weight_pct": 1.3503,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -162,7 +162,7 @@
       "stock_code": "2383",
       "stock_name": "台光電",
       "shares": 14924.0,
-      "weight_pct": 2.3655,
+      "weight_pct": 2.2207,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -171,7 +171,7 @@
       "stock_code": "2395",
       "stock_name": "研華",
       "shares": 22509.0,
-      "weight_pct": 0.4715,
+      "weight_pct": 0.4844,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -180,7 +180,7 @@
       "stock_code": "2408",
       "stock_name": "南亞科",
       "shares": 67504.0,
-      "weight_pct": 0.8737,
+      "weight_pct": 0.9326,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -189,7 +189,7 @@
       "stock_code": "2412",
       "stock_name": "中華電",
       "shares": 187203.0,
-      "weight_pct": 0.9247,
+      "weight_pct": 0.9266,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -198,7 +198,7 @@
       "stock_code": "2449",
       "stock_name": "京元電子",
       "shares": 58029.0,
-      "weight_pct": 0.4762,
+      "weight_pct": 0.489,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -207,7 +207,7 @@
       "stock_code": "2454",
       "stock_name": "聯發科",
       "shares": 74093.0,
-      "weight_pct": 9.2888,
+      "weight_pct": 9.1914,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -216,7 +216,7 @@
       "stock_code": "2603",
       "stock_name": "長榮",
       "shares": 51337.0,
-      "weight_pct": 0.4173,
+      "weight_pct": 0.4205,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -225,7 +225,7 @@
       "stock_code": "2880",
       "stock_name": "華南金",
       "shares": 463769.0,
-      "weight_pct": 0.7293,
+      "weight_pct": 0.7279,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -234,7 +234,7 @@
       "stock_code": "2881",
       "stock_name": "富邦金",
       "shares": 424817.0,
-      "weight_pct": 2.1051,
+      "weight_pct": 2.1559,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -243,7 +243,7 @@
       "stock_code": "2882",
       "stock_name": "國泰金",
       "shares": 480874.0,
-      "weight_pct": 1.7063,
+      "weight_pct": 1.7173,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -252,7 +252,7 @@
       "stock_code": "2883",
       "stock_name": "凱基金",
       "shares": 803625.0,
-      "weight_pct": 0.9484,
+      "weight_pct": 0.968,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -261,7 +261,7 @@
       "stock_code": "2884",
       "stock_name": "玉山金",
       "shares": 795182.0,
-      "weight_pct": 1.2368,
+      "weight_pct": 1.2318,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -270,7 +270,7 @@
       "stock_code": "2885",
       "stock_name": "元大金",
       "shares": 575272.0,
-      "weight_pct": 1.3021,
+      "weight_pct": 1.3192,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -279,7 +279,7 @@
       "stock_code": "2886",
       "stock_name": "兆豐金",
       "shares": 562448.0,
-      "weight_pct": 0.9706,
+      "weight_pct": 0.9691,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -288,7 +288,7 @@
       "stock_code": "2887",
       "stock_name": "台新新光金",
       "shares": 1188191.0,
-      "weight_pct": 1.5639,
+      "weight_pct": 1.5708,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -297,7 +297,7 @@
       "stock_code": "2890",
       "stock_name": "永豐金",
       "shares": 658560.0,
-      "weight_pct": 0.9543,
+      "weight_pct": 0.9542,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -306,7 +306,7 @@
       "stock_code": "2891",
       "stock_name": "中信金",
       "shares": 906313.0,
-      "weight_pct": 2.1223,
+      "weight_pct": 2.1294,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -315,7 +315,7 @@
       "stock_code": "2892",
       "stock_name": "第一金",
       "shares": 555087.0,
-      "weight_pct": 0.7349,
+      "weight_pct": 0.7503,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -324,7 +324,7 @@
       "stock_code": "3008",
       "stock_name": "大立光",
       "shares": 5139.0,
-      "weight_pct": 0.9921,
+      "weight_pct": 0.9659,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -333,7 +333,7 @@
       "stock_code": "3017",
       "stock_name": "奇鋐",
       "shares": 16342.0,
-      "weight_pct": 1.6068,
+      "weight_pct": 1.6024,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -342,7 +342,7 @@
       "stock_code": "3037",
       "stock_name": "欣興",
       "shares": 66411.0,
-      "weight_pct": 2.2527,
+      "weight_pct": 2.2052,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -351,7 +351,7 @@
       "stock_code": "3045",
       "stock_name": "台灣大",
       "shares": 65524.0,
-      "weight_pct": 0.2725,
+      "weight_pct": 0.2761,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -360,7 +360,7 @@
       "stock_code": "3231",
       "stock_name": "緯創",
       "shares": 157533.0,
-      "weight_pct": 0.9358,
+      "weight_pct": 0.9401,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -369,7 +369,7 @@
       "stock_code": "3443",
       "stock_name": "創意",
       "shares": 4014.0,
-      "weight_pct": 0.9519,
+      "weight_pct": 0.9343,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -378,7 +378,7 @@
       "stock_code": "3653",
       "stock_name": "健策",
       "shares": 4545.0,
-      "weight_pct": 0.8625,
+      "weight_pct": 0.8343,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -387,7 +387,7 @@
       "stock_code": "3665",
       "stock_name": "貿聯-KY",
       "shares": 9084.0,
-      "weight_pct": 0.5325,
+      "weight_pct": 0.4937,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -396,7 +396,7 @@
       "stock_code": "3711",
       "stock_name": "日月光投控",
       "shares": 169030.0,
-      "weight_pct": 3.456,
+      "weight_pct": 3.4471,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -405,7 +405,7 @@
       "stock_code": "4904",
       "stock_name": "遠傳電信",
       "shares": 83552.0,
-      "weight_pct": 0.3004,
+      "weight_pct": 0.2984,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -414,7 +414,7 @@
       "stock_code": "4958",
       "stock_name": "臻鼎-KY",
       "shares": 41053.0,
-      "weight_pct": 0.7277,
+      "weight_pct": 0.6687,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -423,7 +423,7 @@
       "stock_code": "5880",
       "stock_name": "合庫金",
       "shares": 549607.0,
-      "weight_pct": 0.4845,
+      "weight_pct": 0.4959,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -432,7 +432,7 @@
       "stock_code": "6446",
       "stock_name": "藥華藥",
       "shares": 17337.0,
-      "weight_pct": 0.6287,
+      "weight_pct": 0.6463,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -441,7 +441,7 @@
       "stock_code": "6505",
       "stock_name": "台塑化",
       "shares": 52080.0,
-      "weight_pct": 0.1734,
+      "weight_pct": 0.1729,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -450,7 +450,7 @@
       "stock_code": "6669",
       "stock_name": "緯穎",
       "shares": 15489.0,
-      "weight_pct": 0.891,
+      "weight_pct": 0.9462,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -459,7 +459,7 @@
       "stock_code": "7769",
       "stock_name": "鴻勁",
       "shares": 3018.0,
-      "weight_pct": 0.4977,
+      "weight_pct": 0.4926,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"
@@ -468,7 +468,7 @@
       "stock_code": "8046",
       "stock_name": "南電",
       "shares": 12166.0,
-      "weight_pct": 0.4811,
+      "weight_pct": 0.4783,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "table_3"

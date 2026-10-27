@@ -1,5 +1,5 @@
 {
-  "trade_date": "2026.10.22",
+  "trade_date": "2026.10.27",
   "etf_code": "00940",
   "etf_name": "元大台灣價值高息",
   "issuer": "元大投信",
@@ -15,7 +15,7 @@
     "reason": "Page title/header/selected option visibly matches target ETF."
   },
   "pcf_meta": {
-    "trade_date": "2026.10.22",
+    "trade_date": "2026.10.27",
     "fund_nav": 0.0,
     "outstanding_units": 0.0,
     "unit_diff": 0.0,
@@ -26,8 +26,8 @@
     {
       "stock_code": "2357",
       "stock_name": "商品名稱",
-      "shares": 3495000.0,
-      "weight_pct": 4.96,
+      "shares": 3481000.0,
+      "weight_pct": 5.01,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -35,8 +35,8 @@
     {
       "stock_code": "2618",
       "stock_name": "商品名稱",
-      "shares": 51889000.0,
-      "weight_pct": 3.28,
+      "shares": 51659000.0,
+      "weight_pct": 3.31,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -44,8 +44,8 @@
     {
       "stock_code": "2881",
       "stock_name": "商品名稱",
-      "shares": 14684900.0,
-      "weight_pct": 3.49,
+      "shares": 14644900.0,
+      "weight_pct": 3.53,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -53,8 +53,8 @@
     {
       "stock_code": "3034",
       "stock_name": "商品名稱",
-      "shares": 4337000.0,
-      "weight_pct": 3.79,
+      "shares": 4332000.0,
+      "weight_pct": 3.87,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
@@ -63,7 +63,7 @@
       "stock_code": "3406",
       "stock_name": "商品名稱",
       "shares": 1728000.0,
-      "weight_pct": 3.01,
+      "weight_pct": 3.11,
       "close": 0.0,
       "market_value": 0.0,
       "source_table": "text_fallback"
