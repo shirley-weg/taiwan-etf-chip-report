@@ -597,10 +597,10 @@
     "etf_code": "00643",
     "etf_name": "群益深証中小",
     "issuer": "群益投信",
-    "status": "pcf_code_mismatch",
+    "status": "error",
     "pcf_url": "https://www.capitalfund.com.tw/etf/transaction/buyback",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00643\", \"target_etf_name\": \"群益深証中小\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單公告｜群益投信理財網\", \"申購買回清單\", \"申購買回清單公告\", \"申購/買回控管\", \"股票\", \"期貨\"]}"
+    "error": "503 Server Error: Service Unavailable for url: https://www.capitalfund.com.tw/etf/transaction/buyback"
   },
   {
     "etf_code": "00643K",
@@ -1463,9 +1463,9 @@
     "etf_code": "00738U",
     "etf_name": "期元大道瓊白銀",
     "issuer": "元大投信",
-    "status": "parsed_zero_holdings",
+    "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00738U",
-    "holdings_count": 0,
+    "holdings_count": 1,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1474,7 +1474,7 @@
       "matched_context": "(00738U)元大道瓊白銀ER指數股票型期貨信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": ""
   },
   {
     "etf_code": "00739",
@@ -2334,18 +2334,10 @@
     "etf_code": "00947",
     "etf_name": "台新臺灣IC設計",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00947",
-      "target_etf_name": "台新臺灣IC設計",
-      "matched_context": "(00947) 台新臺灣IC設計",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00947\", \"target_etf_name\": \"台新臺灣IC設計\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00949",
@@ -2360,10 +2352,18 @@
     "etf_code": "00951",
     "etf_name": "台新日本半導體",
     "issuer": "台新投信",
-    "status": "pcf_code_mismatch",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00951\", \"target_etf_name\": \"台新日本半導體\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "00951",
+      "target_etf_name": "台新日本半導體",
+      "matched_context": "(00951) 台新日本半導體",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00952",
@@ -2431,18 +2431,10 @@
     "etf_code": "00962",
     "etf_name": "台新AI優息動能",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00962",
-      "target_etf_name": "台新AI優息動能",
-      "matched_context": "(00962) 台新AI優息動能",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00962\", \"target_etf_name\": \"台新AI優息動能\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00963",
@@ -3046,10 +3038,10 @@
     "etf_code": "00997A",
     "etf_name": "主動群益美國增長",
     "issuer": "群益投信",
-    "status": "pcf_code_mismatch",
+    "status": "error",
     "pcf_url": "https://www.capitalfund.com.tw/etf/transaction/buyback",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00997A\", \"target_etf_name\": \"主動群益美國增長\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單公告｜群益投信理財網\", \"申購買回清單\", \"申購買回清單公告\", \"申購/買回控管\", \"股票\", \"期貨\"]}"
+    "error": "503 Server Error: Service Unavailable for url: https://www.capitalfund.com.tw/etf/transaction/buyback"
   },
   {
     "etf_code": "00999A",
