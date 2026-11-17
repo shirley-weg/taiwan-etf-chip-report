@@ -1,21 +1,21 @@
 {
   "meta": {
-    "report_date": "2026-11-17",
-    "updated_at": "2026-11-17 04:55:46",
+    "report_date": "2026-11-18",
+    "updated_at": "2026-11-18 03:19:04",
     "timezone": "Asia/Taipei",
     "tracked_etfs": 247,
-    "covered_etfs": 26,
-    "coverage_ratio": 0.1053,
+    "covered_etfs": 28,
+    "coverage_ratio": 0.1134,
     "universe": "TWSE listed ETFs",
     "market_bias": "中性",
     "snapshot_mode": "production_issuer_pcf",
-    "previous_snapshot_date": "2026-11-16",
+    "previous_snapshot_date": "2026-11-17",
     "sample_mode": false
   },
   "data_quality": {
     "tracked_etfs": 247,
-    "covered_etfs": 26,
-    "coverage_ratio": 0.1053,
+    "covered_etfs": 28,
+    "coverage_ratio": 0.1134,
     "min_required_coverage_ratio": 0.1,
     "is_ready": true
   },
@@ -27,6 +27,94 @@
   },
   "top_stock_changes": [
     {
+      "stock_code": "3037",
+      "stock_name": "欣興",
+      "direction": "neutral",
+      "delta_lot": -165.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -6.15,
+      "signal": "欣興 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "3189",
+      "stock_name": "景碩",
+      "direction": "neutral",
+      "delta_lot": -400.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -12.7,
+      "signal": "景碩 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "2303",
+      "stock_name": "股票名稱",
+      "direction": "neutral",
+      "delta_lot": 0.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": 0.0,
+      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "2308",
+      "stock_name": "商品名稱",
+      "direction": "neutral",
+      "delta_lot": 2.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -0.09,
+      "signal": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "2317",
+      "stock_name": "商品名稱",
+      "direction": "neutral",
+      "delta_lot": 17.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": 0.17,
+      "signal": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "商品名稱",
+      "direction": "neutral",
+      "delta_lot": 22.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -0.22,
+      "signal": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "2454",
+      "stock_name": "商品名稱",
+      "direction": "neutral",
+      "delta_lot": 2.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": 0.28,
+      "signal": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "商品名稱",
+      "direction": "neutral",
+      "delta_lot": 5.0,
+      "delta_value_yi": 0.0,
+      "etf_count": 0,
+      "weight_delta_pct": -0.19,
+      "signal": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。",
+      "participating_etfs": []
+    },
+    {
       "stock_code": "2801",
       "stock_name": "股票名稱",
       "direction": "neutral",
@@ -46,99 +134,91 @@
       "etf_count": 0,
       "weight_delta_pct": 0.0,
       "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "2881",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "2882",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "2883",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1102",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1216",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "1303",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "2027",
-      "stock_name": "股票名稱",
-      "direction": "neutral",
-      "delta_lot": 0.0,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。",
-      "participating_etfs": []
-    },
-    {
-      "stock_code": "5323",
-      "stock_name": "股票代碼",
-      "direction": "neutral",
-      "delta_lot": 1.2,
-      "delta_value_yi": 0.0,
-      "etf_count": 0,
-      "weight_delta_pct": 0.0,
-      "signal": "股票代碼 今日 ETF 籌碼變化有限，暫列觀察。",
       "participating_etfs": []
     }
   ],
   "stock_radar": [
     {
+      "stock_code": "3037",
+      "stock_name": "欣興",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "欣興 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "3189",
+      "stock_name": "景碩",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "景碩 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "2303",
+      "stock_name": "股票名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "2308",
+      "stock_name": "商品名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "2317",
+      "stock_name": "商品名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "2330",
+      "stock_name": "商品名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "2454",
+      "stock_name": "商品名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
+      "stock_code": "3711",
+      "stock_name": "商品名稱",
+      "buy_etfs": 0,
+      "sell_etfs": 0,
+      "net_value_yi": 0.0,
+      "streak_days": 1,
+      "event_type": "觀察",
+      "note": "商品名稱 今日 ETF 籌碼變化有限，暫列觀察。"
+    },
+    {
       "stock_code": "2801",
       "stock_name": "股票名稱",
       "buy_etfs": 0,
@@ -157,86 +237,6 @@
       "streak_days": 1,
       "event_type": "觀察",
       "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "2881",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "2882",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "2883",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1102",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1216",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "1303",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "2027",
-      "stock_name": "股票名稱",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票名稱 今日 ETF 籌碼變化有限，暫列觀察。"
-    },
-    {
-      "stock_code": "5323",
-      "stock_name": "股票代碼",
-      "buy_etfs": 0,
-      "sell_etfs": 0,
-      "net_value_yi": 0.0,
-      "streak_days": 1,
-      "event_type": "觀察",
-      "note": "股票代碼 今日 ETF 籌碼變化有限，暫列觀察。"
     }
   ],
   "etf_rankings": [
@@ -774,9 +774,9 @@
       "etf_code": "00965",
       "etf_name": "元大航太防衛科技",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -954,9 +954,9 @@
       "etf_code": "00940",
       "etf_name": "元大台灣價值高息",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1024,9 +1024,9 @@
       "etf_code": "00930",
       "etf_name": "永豐ESG低碳高息",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1224,9 +1224,9 @@
       "etf_code": "00907",
       "etf_name": "永豐優息存股",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1274,9 +1274,9 @@
       "etf_code": "00901",
       "etf_name": "永豐智能車供應鏈",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1484,9 +1484,9 @@
       "etf_code": "00850",
       "etf_name": "元大臺灣ESG永續",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1604,9 +1604,9 @@
       "etf_code": "00738U",
       "etf_name": "期元大道瓊白銀",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1764,9 +1764,9 @@
       "etf_code": "00708L",
       "etf_name": "期元大S&P黃金正2",
       "aum_yi": 0.0,
-      "buy_value_yi": 0.0,
-      "sell_value_yi": 0.0,
-      "net_flow_yi": 0.0,
+      "buy_value_yi": 0,
+      "sell_value_yi": 0,
+      "net_flow_yi": 0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -1784,9 +1784,9 @@
       "etf_code": "00706L",
       "etf_name": "期元大S&P日圓正2",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2454,9 +2454,9 @@
       "etf_code": "006204",
       "etf_name": "永豐臺灣加權",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2514,9 +2514,9 @@
       "etf_code": "0053",
       "etf_name": "元大科技市值",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2544,9 +2544,9 @@
       "etf_code": "0050",
       "etf_name": "元大台灣50",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2604,9 +2604,9 @@
       "etf_code": "00410A",
       "etf_name": "主動永豐科技趨勢",
       "aum_yi": 0.0,
-      "buy_value_yi": 0,
-      "sell_value_yi": 0,
-      "net_flow_yi": 0,
+      "buy_value_yi": 0.0,
+      "sell_value_yi": 0.0,
+      "net_flow_yi": 0.0,
       "turnover_pct": 0.0,
       "top10_weight_pct": 0.0
     },
@@ -2720,7 +2720,7 @@
     {
       "time": "資料檢查",
       "title": "PCF 持股快照覆蓋率",
-      "desc": "今日已成功解析 26/247 檔 ETF PCF，覆蓋率 10.5%。"
+      "desc": "今日已成功解析 28/247 檔 ETF PCF，覆蓋率 11.3%。"
     }
   ],
   "data_sources": [
@@ -2780,13 +2780,13 @@
   ],
   "ai_report": {
     "headline": "今日全市場 ETF 籌碼中性，前十大變動淨額 0.0 億元。",
-    "summary": "本報告以 TWSE ETF master 與各投信 PCF 持股快照計算。今日 PCF 覆蓋率為 10.5%，前十大變動集中度為 0%。",
+    "summary": "本報告以 TWSE ETF master 與各投信 PCF 持股快照計算。今日 PCF 覆蓋率為 11.3%，前十大變動集中度為 0%。",
     "watchlist": [
-      "2801 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2880 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2881 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2882 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
-      "2883 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔"
+      "3037 欣興：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "3189 景碩：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "2303 股票名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "2308 商品名稱：ETF 減碼 0.00 億，參與 ETF 0 檔",
+      "2317 商品名稱：ETF 減碼 0.00 億，參與 ETF 0 檔"
     ],
     "risk": "若 PCF 覆蓋率未達 100%，請避免將報告視為完整市場結論。"
   }
