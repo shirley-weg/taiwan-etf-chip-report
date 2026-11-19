@@ -103,7 +103,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 22,
+    "holdings_count": 21,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -335,7 +335,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 22,
+    "holdings_count": 21,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -522,9 +522,9 @@
     "etf_code": "00637L",
     "etf_name": "元大滬深300正2",
     "issuer": "元大投信",
-    "status": "ok",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00637L",
-    "holdings_count": 1,
+    "holdings_count": 0,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -533,7 +533,7 @@
       "matched_context": "(00637L)元大滬深300傘型證券投資信託基金之滬深300單日正向2倍證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": ""
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00638R",
@@ -1909,7 +1909,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 22,
+    "holdings_count": 21,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1978,7 +1978,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 22,
+    "holdings_count": 21,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -2099,10 +2099,18 @@
     "etf_code": "00919",
     "etf_name": "群益台灣精選高息",
     "issuer": "群益投信",
-    "status": "error",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.capitalfund.com.tw/etf/transaction/buyback",
     "holdings_count": 0,
-    "error": "503 Server Error: Service Unavailable for url: https://www.capitalfund.com.tw/etf/transaction/buyback"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "00919",
+      "target_etf_name": "群益台灣精選高息",
+      "matched_context": "登入交易 (EN) 請輸入基金名稱 熱門搜尋 00919",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00920",
@@ -2198,7 +2206,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 22,
+    "holdings_count": 21,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -2282,7 +2290,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00939",
       "target_etf_name": "統一台灣高息動能",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/18 00939 統一台灣高息動能 23.08 -0.48 -2.04%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/19 00939 統一台灣高息動能 22.52 -0.56 -2.43%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2379,18 +2387,10 @@
     "etf_code": "00951",
     "etf_name": "台新日本半導體",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00951",
-      "target_etf_name": "台新日本半導體",
-      "matched_context": "(00951) 台新日本半導體",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00951\", \"target_etf_name\": \"台新日本半導體\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00952",
@@ -2721,7 +2721,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00981A",
       "target_etf_name": "主動統一台股增長",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/18 00981A 主動統一台股增長 21.96 0.52 2.43% 11/18 00403A 主動統一升級50 8.07 0.13 1.64%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/19 00981A 主動統一台股增長 20.45 -1.51 -6.88% 11/19 00403A 主動統一升級50 7.55 -0.52 -6.44%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2976,7 +2976,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00988A",
       "target_etf_name": "主動統一全球創新",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/17 00988A 主動統一全球創新 12.29 -0.37 -2.92% 11/17 00411A 主動統一前沿科技 8.55 -0.20 -2.29% 11/17 00987D 主動統一美債量化 10.1176 -0.0064 -0.06%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/18 00988A 主動統一全球創新 12.64 0.35 2.85% 11/18 00411A 主動統一前沿科技 8.71 0.16 1.87% 11/18 00987D 主動統一美債量化 10.1281 0.0105 0.10%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
