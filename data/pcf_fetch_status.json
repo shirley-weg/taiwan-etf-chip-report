@@ -95,7 +95,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00409A\", \"target_etf_name\": \"主動復華全球50\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00409A\", \"target_etf_name\": \"主動復華全球50\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00410A",
@@ -165,7 +165,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00418A\", \"target_etf_name\": \"主動復華台灣新星\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00418A\", \"target_etf_name\": \"主動復華台灣新星\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00420A",
@@ -387,7 +387,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"006207\", \"target_etf_name\": \"復華滬深\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"006207\", \"target_etf_name\": \"復華滬深\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "006208",
@@ -487,9 +487,9 @@
     "etf_code": "00635U",
     "etf_name": "期元大S&P黃金",
     "issuer": "元大投信",
-    "status": "ok",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00635U",
-    "holdings_count": 1,
+    "holdings_count": 0,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -498,7 +498,7 @@
       "matched_context": "(00635U)元大標普高盛黃金ER指數股票型期貨信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": ""
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00636",
@@ -524,7 +524,7 @@
     "issuer": "元大投信",
     "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00637L",
-    "holdings_count": 2,
+    "holdings_count": 1,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -624,10 +624,10 @@
     "etf_code": "00643",
     "etf_name": "群益深証中小",
     "issuer": "群益投信",
-    "status": "error",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.capitalfund.com.tw/etf/transaction/buyback",
     "holdings_count": 0,
-    "error": "503 Server Error: Service Unavailable for url: https://www.capitalfund.com.tw/etf/transaction/buyback"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00643\", \"target_etf_name\": \"群益深証中小\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單公告｜群益投信理財網\", \"申購買回清單\", \"申購買回清單公告\", \"申購/買回控管\", \"股票\", \"期貨\"]}"
   },
   {
     "etf_code": "00643K",
@@ -713,7 +713,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00650L\", \"target_etf_name\": \"復華香港正2\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00650L\", \"target_etf_name\": \"復華香港正2\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00651R",
@@ -722,7 +722,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00651R\", \"target_etf_name\": \"復華香港反1\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00651R\", \"target_etf_name\": \"復華香港反1\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00652",
@@ -996,18 +996,10 @@
     "etf_code": "00674R",
     "etf_name": "期元大S&P黃金反1",
     "issuer": "元大投信",
-    "status": "parsed_zero_holdings",
+    "status": "error",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00674R",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00674R",
-      "target_etf_name": "期元大S&P黃金反1",
-      "matched_context": "(00674R)元大標普油金傘型期貨信託基金之元大標普高盛黃金ER單日反向1倍指數股票型期貨信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "502 Server Error: Bad Gateway for url: https://www.yuantaetfs.com/tradeInfo/pcf/00674R"
   },
   {
     "etf_code": "00675L",
@@ -1335,7 +1327,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00710B\", \"target_etf_name\": \"復華彭博非投等債\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00710B\", \"target_etf_name\": \"復華彭博非投等債\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00711B",
@@ -1344,7 +1336,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00711B\", \"target_etf_name\": \"復華彭博新興債\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00711B\", \"target_etf_name\": \"復華彭博新興債\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00712",
@@ -1353,7 +1345,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00712\", \"target_etf_name\": \"復華富時不動產\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00712\", \"target_etf_name\": \"復華富時不動產\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00713",
@@ -1440,7 +1432,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00731\", \"target_etf_name\": \"復華富時高息低波\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00731\", \"target_etf_name\": \"復華富時高息低波\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00733",
@@ -1594,9 +1586,9 @@
     "etf_code": "00771",
     "etf_name": "元大US高息特別股",
     "issuer": "元大投信",
-    "status": "ok",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00771",
-    "holdings_count": 1,
+    "holdings_count": 0,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1605,7 +1597,7 @@
       "matched_context": "(00771)元大標普美國高息特別股ETF證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": ""
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00775B",
@@ -1671,18 +1663,10 @@
     "etf_code": "00851",
     "etf_name": "台新全球AI",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00851",
-      "target_etf_name": "台新全球AI",
-      "matched_context": "(00851) 台新全球AI",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00851\", \"target_etf_name\": \"台新全球AI\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00852L",
@@ -1734,7 +1718,7 @@
     "issuer": "元大投信",
     "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00876",
-    "holdings_count": 3,
+    "holdings_count": 2,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -2171,7 +2155,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00924\", \"target_etf_name\": \"復華S&P500成長\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00924\", \"target_etf_name\": \"復華S&P500成長\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00926",
@@ -2206,7 +2190,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00929\", \"target_etf_name\": \"復華台灣科技優息\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00929\", \"target_etf_name\": \"復華台灣科技優息\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00930",
@@ -2298,7 +2282,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00939",
       "target_etf_name": "統一台灣高息動能",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/23 00939 統一台灣高息動能 21.04 -0.28 -1.31%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/24 00939 統一台灣高息動能 22.63 1.59 7.56%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2369,18 +2353,10 @@
     "etf_code": "00947",
     "etf_name": "台新臺灣IC設計",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00947",
-      "target_etf_name": "台新臺灣IC設計",
-      "matched_context": "(00947) 台新臺灣IC設計",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00947\", \"target_etf_name\": \"台新臺灣IC設計\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00949",
@@ -2389,7 +2365,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00949\", \"target_etf_name\": \"復華日本龍頭\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00949\", \"target_etf_name\": \"復華日本龍頭\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00951",
@@ -2474,18 +2450,10 @@
     "etf_code": "00962",
     "etf_name": "台新AI優息動能",
     "issuer": "台新投信",
-    "status": "parsed_zero_holdings",
+    "status": "pcf_code_mismatch",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "identity_check": {
-      "ok": true,
-      "method": "visible_context_match",
-      "target_etf_code": "00962",
-      "target_etf_name": "台新AI優息動能",
-      "matched_context": "(00962) 台新AI優息動能",
-      "reason": "Page title/header/selected option visibly matches target ETF."
-    },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00962\", \"target_etf_name\": \"台新AI優息動能\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
   },
   {
     "etf_code": "00963",
@@ -2753,7 +2721,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00981A",
       "target_etf_name": "主動統一台股增長",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/23 00981A 主動統一台股增長 19.73 0.92 4.89% 11/23 00403A 主動統一升級50 7.25 0.23 3.28%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/24 00981A 主動統一台股增長 21.55 1.82 9.22% 11/24 00403A 主動統一升級50 7.83 0.58 8.00%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -3008,7 +2976,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00988A",
       "target_etf_name": "主動統一全球創新",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/20 00988A 主動統一全球創新 11.41 -0.86 -7.01% 11/20 00411A 主動統一前沿科技 7.92 -0.56 -6.60% 11/20 00987D 主動統一美債量化 10.1598 0.0367 0.36%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/23 00988A 主動統一全球創新 11.86 0.45 3.94% 11/23 00411A 主動統一前沿科技 8.20 0.28 3.54% 11/23 00987D 主動統一美債量化 10.1799 0.0201 0.20%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -3026,9 +2994,9 @@
     "etf_code": "00990A",
     "etf_name": "主動元大AI新經濟",
     "issuer": "元大投信",
-    "status": "ok",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00990A",
-    "holdings_count": 1,
+    "holdings_count": 0,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -3037,7 +3005,7 @@
       "matched_context": "(00990A)元大全球AI新經濟主動式ETF證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": ""
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00991A",
@@ -3046,7 +3014,7 @@
     "status": "pcf_code_mismatch",
     "pcf_url": "https://www.fhtrust.com.tw/ETF/trade_list",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00991A\", \"target_etf_name\": \"主動復華未來50\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"查無資料，請修改查詢區間\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\", \"相關說明\"]}"
+    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00991A\", \"target_etf_name\": \"主動復華未來50\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
     "etf_code": "00991B",
