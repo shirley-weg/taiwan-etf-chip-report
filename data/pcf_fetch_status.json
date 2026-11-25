@@ -168,6 +168,15 @@
     "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00418A\", \"target_etf_name\": \"主動復華台灣新星\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"申購買回清單 | 初級市場申贖資訊 | 復華投信\", \"初級市場申贖資訊\", \"現金申購買回清單公告\", \"股票\", \"申購買回清單\", \"很抱歉，您目前使用的瀏覽器無法支援瀏覽。\"]}"
   },
   {
+    "etf_code": "00419A",
+    "etf_name": "主動施羅德AI台股",
+    "issuer": "",
+    "status": "no_pcf_url",
+    "pcf_url": "",
+    "holdings_count": 0,
+    "error": "No PCF URL discovered. Add data/pcf_source_registry.json entry."
+  },
+  {
     "etf_code": "00420A",
     "etf_name": "主動野村亞洲科技",
     "issuer": "野村投信",
@@ -487,9 +496,9 @@
     "etf_code": "00635U",
     "etf_name": "期元大S&P黃金",
     "issuer": "元大投信",
-    "status": "parsed_zero_holdings",
+    "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00635U",
-    "holdings_count": 0,
+    "holdings_count": 1,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -498,7 +507,7 @@
       "matched_context": "(00635U)元大標普高盛黃金ER指數股票型期貨信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": ""
   },
   {
     "etf_code": "00636",
@@ -996,10 +1005,18 @@
     "etf_code": "00674R",
     "etf_name": "期元大S&P黃金反1",
     "issuer": "元大投信",
-    "status": "error",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00674R",
     "holdings_count": 0,
-    "error": "502 Server Error: Bad Gateway for url: https://www.yuantaetfs.com/tradeInfo/pcf/00674R"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "00674R",
+      "target_etf_name": "期元大S&P黃金反1",
+      "matched_context": "(00674R)元大標普油金傘型期貨信託基金之元大標普高盛黃金ER單日反向1倍指數股票型期貨信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00675L",
@@ -2282,7 +2299,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00939",
       "target_etf_name": "統一台灣高息動能",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/24 00939 統一台灣高息動能 22.63 1.59 7.56%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/25 00939 統一台灣高息動能 21.43 -1.20 -5.30%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2721,7 +2738,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00981A",
       "target_etf_name": "主動統一台股增長",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/24 00981A 主動統一台股增長 21.55 1.82 9.22% 11/24 00403A 主動統一升級50 7.83 0.58 8.00%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/25 00981A 主動統一台股增長 20.74 -0.81 -3.76% 11/25 00403A 主動統一升級50 7.55 -0.28 -3.58%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2976,7 +2993,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00988A",
       "target_etf_name": "主動統一全球創新",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/23 00988A 主動統一全球創新 11.86 0.45 3.94% 11/23 00411A 主動統一前沿科技 8.20 0.28 3.54% 11/23 00987D 主動統一美債量化 10.1799 0.0201 0.20%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/24 00988A 主動統一全球創新 12.01 0.15 1.26% 11/24 00411A 主動統一前沿科技 8.15 -0.05 -0.61% 11/24 00987D 主動統一美債量化 10.1806 0.0007 0.01%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2994,9 +3011,9 @@
     "etf_code": "00990A",
     "etf_name": "主動元大AI新經濟",
     "issuer": "元大投信",
-    "status": "parsed_zero_holdings",
+    "status": "ok",
     "pcf_url": "https://www.yuantaetfs.com/tradeInfo/pcf/00990A",
-    "holdings_count": 0,
+    "holdings_count": 1,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -3005,7 +3022,7 @@
       "matched_context": "(00990A)元大全球AI新經濟主動式ETF證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
-    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
+    "error": ""
   },
   {
     "etf_code": "00991A",

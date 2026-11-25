@@ -336,6 +336,27 @@
     "remark": "nan"
   },
   {
+    "etf_code": "00419A",
+    "etf_name": "主動施羅德AI台股",
+    "isin": "TW00000419A3",
+    "listing_date": "2026.11.26",
+    "benchmark": "",
+    "issuer": "",
+    "market": "TWSE",
+    "security_type": "ETF",
+    "source": "TWSE ISIN class_main",
+    "source_url": "https://isin.twse.com.tw/isin/class_main.jsp",
+    "category": "",
+    "aum_yi": 0.0,
+    "close": 0.0,
+    "avg_daily_trading_value_ytd_million": 0.0,
+    "avg_daily_trading_volume_ytd_shares": 0,
+    "beneficiaries": 0,
+    "top10_weight_pct": 0.0,
+    "cfi_code": "CEOIEU",
+    "remark": "nan"
+  },
+  {
     "etf_code": "00420A",
     "etf_name": "主動野村亞洲科技",
     "isin": "TW00000420A1",
