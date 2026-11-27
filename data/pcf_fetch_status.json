@@ -103,7 +103,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 18,
+    "holdings_count": 19,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -344,7 +344,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 18,
+    "holdings_count": 19,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1926,7 +1926,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 18,
+    "holdings_count": 19,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -1995,7 +1995,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 18,
+    "holdings_count": 19,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -2223,7 +2223,7 @@
     "issuer": "永豐投信",
     "status": "ok",
     "pcf_url": "https://sitc.sinopac.com/SinopacEtfs/Etfs/Pcf",
-    "holdings_count": 18,
+    "holdings_count": 19,
     "identity_check": {
       "ok": true,
       "method": "visible_context_match",
@@ -2307,7 +2307,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00939",
       "target_etf_name": "統一台灣高息動能",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/26 00939 統一台灣高息動能 22.03 0.60 2.80%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/27 00939 統一台灣高息動能 21.81 -0.22 -1.00%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
@@ -2483,10 +2483,18 @@
     "etf_code": "00962",
     "etf_name": "台新AI優息動能",
     "issuer": "台新投信",
-    "status": "pcf_code_mismatch",
+    "status": "parsed_zero_holdings",
     "pcf_url": "https://www.tsit.com.tw/ETF/Home/Pcf",
     "holdings_count": 0,
-    "error": "{\"ok\": false, \"method\": \"identity_not_confirmed\", \"target_etf_code\": \"00962\", \"target_etf_name\": \"台新AI優息動能\", \"matched_context\": \"\", \"reason\": \"PCF page does not visibly confirm the target ETF code/name in title, header, selected option, or direct ETF-specific URL context. Not saving this snapshot to avoid default-ETF misclassification.\", \"sample_contexts\": [\"Error\"]}"
+    "identity_check": {
+      "ok": true,
+      "method": "visible_context_match",
+      "target_etf_code": "00962",
+      "target_etf_name": "台新AI優息動能",
+      "matched_context": "(00962) 台新AI優息動能",
+      "reason": "Page title/header/selected option visibly matches target ETF."
+    },
+    "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
   },
   {
     "etf_code": "00963",
@@ -2754,7 +2762,7 @@
       "method": "visible_context_match",
       "target_etf_code": "00981A",
       "target_etf_name": "主動統一台股增長",
-      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/26 00981A 主動統一台股增長 21.80 1.06 5.11% 11/26 00403A 主動統一升級50 7.90 0.35 4.64%",
+      "matched_context": "日期 基金名稱 淨值 漲跌 漲跌幅 11/27 00981A 主動統一台股增長 21.69 -0.11 -0.50% 11/27 00403A 主動統一升級50 7.89 -0.01 -0.13%",
       "reason": "Page title/header/selected option visibly matches target ETF."
     },
     "error": "PCF page identity passed, but no Taiwan stock holdings were parsed."
